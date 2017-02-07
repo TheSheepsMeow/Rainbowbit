@@ -6,8 +6,6 @@
         <variable constant="0" name="start" sid="936003034721600" static="0" type="number">0</variable>
         <variable constant="0" name="score" sid="941855883677338" static="0" type="number">0</variable>
         <variable constant="0" name="speed" sid="141031408229986" static="0" type="number">1.25</variable>
-        <variable constant="0" name="mY" sid="8065536412876439" static="0" type="number">0</variable>
-        <variable constant="0" name="mX" sid="8021593547019941" static="0" type="number">0</variable>
         <comment>Resetting variables &amp; player positioning</comment>
         <event-block sid="7153767189189514">
             <conditions>
@@ -26,17 +24,68 @@
                 <action id="2" name="Set scale" sid="899206630594532" type="SpriteFont">
                     <param id="0" name="Scale">3</param>
                 </action>
+                <action id="0" name="Play" sid="872467115140047" type="Audio">
+                    <param id="0" name="Audio file">RainbowbitMusicdraft1</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;MainMusic&quot;</param>
+                </action>
+                <action id="-3" name="Set position" sid="911999150135854" type="EndgameFade">
+                    <param id="0" name="X">camera.X</param>
+                    <param id="1" name="Y">camera.Y - 80</param>
+                </action>
+                <action behavior="Pin" id="0" name="Pin to object" sid="361225308986523" type="EndgameFade">
+                    <param id="0" name="Pin to">camera</param>
+                    <param id="1" name="Mode">1</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="120624391151338" type="EndgameFade">
+                    <param id="0" name="Opacity">100</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="761310359140217">
+            <conditions>
+                <condition id="-3" name="On end of layout" sid="611832573834668" type="System" />
+            </conditions>
+            <actions>
+                <action id="6" name="Stop" sid="540224419049240" type="Audio">
+                    <param id="0" name="Tag">&quot;MainMusic&quot;</param>
+                </action>
             </actions>
         </event-block>
         <comment>Touch screen to start game</comment>
         <event-block sid="9714280563174824">
             <conditions>
                 <condition id="0" name="On any touch start" sid="968337344061663" type="Touch" />
+                <condition id="-2" name="Compare Y" sid="595216391276973" type="camera">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">390</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="-9" name="Set value" sid="654358038573224" type="System">
                     <param id="0" name="Variable">start</param>
                     <param id="1" name="Value">1</param>
+                </action>
+                <action behavior="Sine" id="0" name="Set active" sid="760891643358417" type="player">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-16" name="Set opacity" sid="843532554047989" type="SpriteFont">
+                    <param id="0" name="Opacity">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="654405419728048">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="861809528785177" type="System">
+                    <param id="0" name="Variable">start</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="994042110187820" type="camera">
+                    <param id="0" name="Y">lerp(camera.Y,400,0.025)</param>
                 </action>
             </actions>
         </event-block>
@@ -49,40 +98,41 @@
                     <param id="2" name="Value">1</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="-2" name="Set Y" sid="179263546492846" type="player">
+                    <param id="0" name="Y">lerp(player.Y,LayoutHeight-120,0.1)</param>
+                </action>
+            </actions>
             <sub-events>
                 <event-block sid="3220041068919001">
                     <conditions>
                         <condition id="-1" name="Every tick" sid="1700242810258255" type="System" />
                     </conditions>
                     <actions>
-                        <action disabled="1" id="-24" name="Move to top" sid="7632542004874719" type="player" />
                         <action id="-3" name="Set position" sid="8873853379775289" type="moonDust">
                             <param id="0" name="X">player.ImagePointX(1)</param>
                             <param id="1" name="Y">player.ImagePointY(1)</param>
-                        </action>
-                        <action disabled="1" id="-9" name="Set value" sid="7900530356945967" type="System">
-                            <param id="0" name="Variable">mX</param>
-                            <param id="1" name="Value">Mouse.X</param>
-                        </action>
-                        <action disabled="1" id="-9" name="Set value" sid="7173803618404787" type="System">
-                            <param id="0" name="Variable">mY</param>
-                            <param id="1" name="Value">Mouse.y</param>
-                        </action>
-                        <action disabled="1" id="-24" name="Move to top" sid="22625710893608" type="player" />
-                        <action id="0" name="Set text" sid="224975720412287" type="speed">
-                            <param id="0" name="Text">&quot;speed&quot; &amp; speed</param>
-                        </action>
-                        <action id="0" name="Set text" sid="117966175495265" type="speed2">
-                            <param id="0" name="Text">&quot;rotation&quot; &amp; player.rotationDir</param>
-                        </action>
-                        <action id="0" name="Set text" sid="821836408621114" type="SpriteFont">
-                            <param id="0" name="Text">player.NumDropsNeeded - player.dropsCollected</param>
                         </action>
                         <action id="5" name="Set frame" sid="260702421758679" type="rainbow">
                             <param id="0" name="Frame number">player.level</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="669482202534965">
+                            <conditions />
+                            <actions>
+                                <action disabled="1" id="0" name="Set text" sid="224975720412287" type="speed">
+                                    <param id="0" name="Text">&quot;speed&quot; &amp; speed</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="117966175495265" type="speed2">
+                                    <param id="0" name="Text">&quot;rotation&quot; &amp; player.rotationDir</param>
+                                </action>
+                                <action disabled="1" id="0" name="Set text" sid="821836408621114" type="SpriteFont">
+                                    <param id="0" name="Text">player.NumDropsNeeded - player.dropsCollected</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <comment>Changing opacity of each rainbow stripe</comment>
                 <event-block sid="814370340776979">
@@ -191,45 +241,6 @@
                             <actions>
                                 <action id="-19" name="Rotate counter-clockwise" sid="1692841053556198" type="player">
                                     <param id="0" name="Degrees">speed</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block any="1" disabled="1" sid="4446723760639168">
-                            <conditions>
-                                <condition id="2" inverted="1" name="Mouse button is down" sid="6391274274747069" type="Mouse">
-                                    <param id="0" name="Mouse button">0</param>
-                                </condition>
-                                <condition id="2" inverted="1" name="Is in touch" sid="937471096652360" type="Touch" />
-                                <condition id="1" name="On any touch end" sid="451166806397932" type="Touch" />
-                            </conditions>
-                            <actions>
-                                <action disabled="1" id="-9" name="Set value" sid="1720248651437784" type="System">
-                                    <param id="0" name="Variable">speed</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block any="1" disabled="1" sid="5966597678708244">
-                            <conditions>
-                                <condition id="2" name="Mouse button is down" sid="1056006177923803" type="Mouse">
-                                    <param id="0" name="Mouse button">0</param>
-                                </condition>
-                            </conditions>
-                            <actions>
-                                <action disabled="1" id="-9" name="Set value" sid="988138861420221" type="System">
-                                    <param id="0" name="Variable">speed</param>
-                                    <param id="1" name="Value">1</param>
-                                </action>
-                            </actions>
-                        </event-block>
-                        <event-block any="1" disabled="1" sid="607664020808454">
-                            <conditions>
-                                <condition id="2" name="Is in touch" sid="990862140814606" type="Touch" />
-                            </conditions>
-                            <actions>
-                                <action disabled="1" id="-9" name="Set value" sid="660922760460518" type="System">
-                                    <param id="0" name="Variable">speed</param>
-                                    <param id="1" name="Value">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -682,8 +693,8 @@
                                 <event-block sid="657240004089555">
                                     <conditions>
                                         <condition id="-13" inverted="1" name="Is between angles" sid="711318555520283" type="player">
-                                            <param id="0" name="First angle">-1</param>
-                                            <param id="1" name="Second angle">1</param>
+                                            <param id="0" name="First angle">-2</param>
+                                            <param id="1" name="Second angle">2</param>
                                         </condition>
                                     </conditions>
                                     <actions />
@@ -723,23 +734,35 @@
                                         <condition id="-22" name="Else" sid="887295001608322" type="System" />
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="193612131856201" type="System">
-                                            <param id="0" name="Variable">speed</param>
-                                            <param id="1" name="Value">0</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="907515056047677" type="System">
-                                            <param id="0" name="Seconds">2.0</param>
-                                        </action>
-                                        <action id="-16" name="Set opacity" sid="807967468861868" type="rainbowshine">
-                                            <param id="0" name="Opacity">0</param>
+                                        <action id="-13" name="Set boolean" sid="499029875848933" type="player">
+                                            <param id="0" name="Instance variable">stopped</param>
+                                            <param id="1" name="Value">1</param>
                                         </action>
                                     </actions>
+                                </event-block>
+                                <event-block sid="870714241733550">
+                                    <conditions>
+                                        <condition id="-8" name="Is boolean instance variable set" sid="734610417947335" type="player">
+                                            <param id="0" name="Instance variable">stopped</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
                                     <sub-events>
                                         <event-block sid="431468193980636">
                                             <conditions>
                                                 <condition id="-4" name="Trigger once while true" sid="793264096157241" type="System" />
                                             </conditions>
                                             <actions>
+                                                <action id="-9" name="Set value" sid="193612131856201" type="System">
+                                                    <param id="0" name="Variable">speed</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="907515056047677" type="System">
+                                                    <param id="0" name="Seconds">2.0</param>
+                                                </action>
+                                                <action id="-16" name="Set opacity" sid="807967468861868" type="rainbowshine">
+                                                    <param id="0" name="Opacity">0</param>
+                                                </action>
                                                 <action behavior="Fade" id="1" name="Start fade" sid="742442939362619" type="player" />
                                                 <action behavior="Timer" id="0" name="Start timer" sid="489375666431428" type="camera">
                                                     <param id="0" name="Duration">3</param>
@@ -755,10 +778,6 @@
                                                     <param id="1" name="Mode">1</param>
                                                 </action>
                                                 <action behavior="Pin" id="0" name="Pin to object" sid="437589209174730" type="Levels">
-                                                    <param id="0" name="Pin to">camera</param>
-                                                    <param id="1" name="Mode">1</param>
-                                                </action>
-                                                <action behavior="Pin" id="0" name="Pin to object" sid="920213162645204" type="EndgameFade">
                                                     <param id="0" name="Pin to">camera</param>
                                                     <param id="1" name="Mode">1</param>
                                                 </action>
@@ -837,6 +856,12 @@
                                                 </condition>
                                             </conditions>
                                             <actions>
+                                                <action behavior="Fade" id="2" name="Set fade-in time" sid="598144172156369" type="EndgameFade">
+                                                    <param id="0" name="Fade-in time">2</param>
+                                                </action>
+                                                <action behavior="Fade" id="4" name="Set fade-out time" sid="876453524654180" type="EndgameFade">
+                                                    <param id="0" name="Fade-out time">0</param>
+                                                </action>
                                                 <action behavior="Fade" id="1" name="Start fade" sid="281759406353752" type="EndgameFade" />
                                             </actions>
                                         </event-block>
