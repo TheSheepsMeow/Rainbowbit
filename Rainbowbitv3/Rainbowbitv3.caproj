@@ -136,7 +136,7 @@
                         </collision-poly>
                     </frame>
                 </animation>
-                <animation framecount="1" loop="0" name="ReallyHappy" pingpong="0" repeatcount="1" repeatto="0" sid="608232407125804" speed="5">
+                <animation framecount="2" loop="1" name="ReallyHappy" pingpong="0" repeatcount="1" repeatto="0" sid="608232407125804" speed="5">
                     <frame duration="1" hotspotX="0.507463" hotspotY="3.13725" original-source="C:\Users\david\Downloads\SheepsMeowInternship\Rainbowbit\Sprites\cloud_collect0.png">
                         <image-point name="Imagepoint 1" x="0.507463" y="0.509804" />
                         <collision-poly>
@@ -148,6 +148,18 @@
                             <point x="0.492537" y="0.921569" />
                             <point x="0.0746269" y="0.901961" />
                             <point x="0.0447761" y="0.490196" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.507463" hotspotY="3.13725" original-source="C:\Users\Pitchfork\Desktop\internship prototypes\cloud_collect3.png">
+                        <image-point name="Imagepoint 1" x="0.507463" y="0.509804" />
+                        <collision-poly>
+                            <point x="0.164179" y="0.215686" />
+                            <point x="0.492537" y="0.0392157" />
+                            <point x="0.820895" y="0.235294" />
+                            <point x="0.925373" y="0.490196" />
+                            <point x="0.925373" y="0.901961" />
+                            <point x="0.0895522" y="0.882353" />
+                            <point x="0.0597015" y="0.490196" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -522,8 +534,20 @@
         <object-type name="rainbow1" sid="737663156804948">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="479627936548504" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="479627936548504" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\david\Downloads\SheepsMeowInternship\Rainbowbit\RainbowStripes\rainbow1.png">
+                        <collision-poly>
+                            <point x="0.351852" y="0.365385" />
+                            <point x="0.5" y="0.333333" />
+                            <point x="0.645062" y="0.36859" />
+                            <point x="0.787037" y="0.5" />
+                            <point x="0.799383" y="0.791667" />
+                            <point x="0.5" y="0.403846" />
+                            <point x="0.194444" y="0.798077" />
+                            <point x="0.20679" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\rainbow1.png">
                         <collision-poly>
                             <point x="0.351852" y="0.365385" />
                             <point x="0.5" y="0.333333" />
@@ -541,7 +565,7 @@
         <object-type name="rainbow2" sid="105732352065318">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="472105949560899" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="472105949560899" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\david\Downloads\SheepsMeowInternship\Rainbowbit\RainbowStripes\rainbow2.png">
                         <collision-poly>
                             <point x="0.351852" y="0.365385" />
@@ -554,13 +578,25 @@
                             <point x="0.20679" y="0.5" />
                         </collision-poly>
                     </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\rainbow2.png">
+                        <collision-poly>
+                            <point x="0.311728" y="0.323718" />
+                            <point x="0.5" y="0.272436" />
+                            <point x="0.685185" y="0.326923" />
+                            <point x="0.833333" y="0.5" />
+                            <point x="0.814815" y="0.807692" />
+                            <point x="0.5" y="0.333333" />
+                            <point x="0.182099" y="0.810897" />
+                            <point x="0.160494" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="rainbow3" sid="129012855288110">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="840129773222014" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="840129773222014" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\david\Downloads\SheepsMeowInternship\Rainbowbit\RainbowStripes\rainbow3.png">
                         <collision-poly>
                             <point x="0.351852" y="0.365385" />
@@ -573,13 +609,25 @@
                             <point x="0.20679" y="0.5" />
                         </collision-poly>
                     </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\rainbow3.png">
+                        <collision-poly>
+                            <point x="0.271605" y="0.282051" />
+                            <point x="0.5" y="0.211538" />
+                            <point x="0.725309" y="0.285256" />
+                            <point x="0.876543" y="0.5" />
+                            <point x="0.824074" y="0.817308" />
+                            <point x="0.5" y="0.272436" />
+                            <point x="0.17284" y="0.820513" />
+                            <point x="0.117284" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="rainbow4" sid="515329678832137">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="115078223641799" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="115078223641799" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\david\Downloads\SheepsMeowInternship\Rainbowbit\RainbowStripes\rainbow4.png">
                         <collision-poly>
                             <point x="0.351852" y="0.365385" />
@@ -592,13 +640,25 @@
                             <point x="0.20679" y="0.5" />
                         </collision-poly>
                     </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\rainbow4.png">
+                        <collision-poly>
+                            <point x="0.234568" y="0.24359" />
+                            <point x="0.5" y="0.153846" />
+                            <point x="0.762346" y="0.246795" />
+                            <point x="0.91358" y="0.5" />
+                            <point x="0.833333" y="0.826923" />
+                            <point x="0.5" y="0.211538" />
+                            <point x="0.16358" y="0.830128" />
+                            <point x="0.0802469" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="rainbow5" sid="956448984075893">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="194219362232967" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="194219362232967" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\david\Downloads\SheepsMeowInternship\Rainbowbit\RainbowStripes\rainbow5.png">
                         <collision-poly>
                             <point x="0.351852" y="0.365385" />
@@ -611,13 +671,25 @@
                             <point x="0.20679" y="0.5" />
                         </collision-poly>
                     </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\rainbow5.png">
+                        <collision-poly>
+                            <point x="0.191358" y="0.198718" />
+                            <point x="0.5" y="0.0833333" />
+                            <point x="0.805556" y="0.201923" />
+                            <point x="0.953704" y="0.5" />
+                            <point x="0.842593" y="0.836538" />
+                            <point x="0.5" y="0.153846" />
+                            <point x="0.154321" y="0.839744" />
+                            <point x="0.0401235" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="rainbow6" sid="860867616241176">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="879082155795586" speed="5">
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="879082155795586" speed="0">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\david\Downloads\SheepsMeowInternship\Rainbowbit\RainbowStripes\rainbow6.png">
                         <collision-poly>
                             <point x="0.351852" y="0.365385" />
@@ -628,6 +700,18 @@
                             <point x="0.5" y="0.403846" />
                             <point x="0.194444" y="0.798077" />
                             <point x="0.20679" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\rainbow6.png">
+                        <collision-poly>
+                            <point x="0.148148" y="0.153846" />
+                            <point x="0.5" y="0.0128205" />
+                            <point x="0.848765" y="0.157051" />
+                            <point x="0.990741" y="0.5" />
+                            <point x="0.848765" y="0.842949" />
+                            <point x="0.5" y="0.0833333" />
+                            <point x="0.148148" y="0.846154" />
+                            <point x="0.00308642" y="0.5" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -713,6 +797,9 @@
                 <behavior-type name="Bullet" sid="226372753766522">
                     <behavior id="Bullet" />
                 </behavior-type>
+                <behavior-type name="Sine" sid="266395736520694">
+                    <behavior id="Sin" />
+                </behavior-type>
             </behaviors>
             <animation-folder>
                 <animation framecount="3" loop="1" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="356139637024387" speed="5">
@@ -750,6 +837,162 @@
                             <point x="0.387387" y="0.415541" />
                             <point x="0.501502" y="0.347973" />
                             <point x="0.717718" y="0.300676" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="islandDripping" sid="243499702565404">
+            <plugin id="Particles" />
+            <texture original-source="C:\Users\Pitchfork\Desktop\internship prototypes\dripping.png" />
+        </object-type>
+        <object-type name="bg_cloud" sid="576896059608512">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="762891204357788" speed="5">
+                    <frame duration="1" hotspotX="0.502463" hotspotY="0.503401" original-source="C:\Users\Pitchfork\Desktop\bg_clouds.png">
+                        <collision-poly>
+                            <point x="0.167488" y="0.231293" />
+                            <point x="0.497537" y="0.0340136" />
+                            <point x="0.827586" y="0.238095" />
+                            <point x="0.926108" y="0.496599" />
+                            <point x="0.935961" y="0.911565" />
+                            <point x="0.497537" y="0.911565" />
+                            <point x="0.0837438" y="0.884354" />
+                            <point x="0.0640394" y="0.496599" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_cloud2" sid="775793975562658">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="712539233108441" speed="5">
+                    <frame duration="1" hotspotX="0.497537" hotspotY="0.503401" original-source="C:\Users\Pitchfork\Desktop\bg_clouds.png">
+                        <collision-poly>
+                            <point x="0.935961" y="0.496599" />
+                            <point x="0.916256" y="0.884354" />
+                            <point x="0.502463" y="0.911565" />
+                            <point x="0.064039" y="0.911565" />
+                            <point x="0.073892" y="0.496599" />
+                            <point x="0.172414" y="0.238095" />
+                            <point x="0.502463" y="0.0340136" />
+                            <point x="0.832512" y="0.231293" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_cloud3" sid="723793897726891">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="975813963796117" speed="5">
+                    <frame duration="1" hotspotX="0.502463" hotspotY="0.503401" original-source="C:\Users\Pitchfork\Desktop\bg_clouds.png">
+                        <collision-poly>
+                            <point x="0.167488" y="0.231293" />
+                            <point x="0.497537" y="0.0340136" />
+                            <point x="0.827586" y="0.238095" />
+                            <point x="0.926108" y="0.496599" />
+                            <point x="0.935961" y="0.911565" />
+                            <point x="0.497537" y="0.911565" />
+                            <point x="0.083744" y="0.884354" />
+                            <point x="0.064039" y="0.496599" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_cloud4" sid="803744783121618">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="741274641656327" speed="5">
+                    <frame duration="1" hotspotX="0.497537" hotspotY="0.503401" original-source="C:\Users\Pitchfork\Desktop\bg_clouds.png">
+                        <collision-poly>
+                            <point x="0.935961" y="0.496599" />
+                            <point x="0.916256" y="0.884354" />
+                            <point x="0.502463" y="0.911565" />
+                            <point x="0.064039" y="0.911565" />
+                            <point x="0.073892" y="0.496599" />
+                            <point x="0.172414" y="0.238095" />
+                            <point x="0.502463" y="0.0340136" />
+                            <point x="0.832512" y="0.231293" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_cloud5" sid="676985599094834">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="146933135456789" speed="5">
+                    <frame duration="1" hotspotX="0.502463" hotspotY="0.503401" original-source="C:\Users\Pitchfork\Desktop\bg_clouds.png">
+                        <collision-poly>
+                            <point x="0.167488" y="0.231293" />
+                            <point x="0.497537" y="0.0340136" />
+                            <point x="0.827586" y="0.238095" />
+                            <point x="0.926108" y="0.496599" />
+                            <point x="0.935961" y="0.911565" />
+                            <point x="0.497537" y="0.911565" />
+                            <point x="0.083744" y="0.884354" />
+                            <point x="0.064039" y="0.496599" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_cloud6" sid="823052783415360">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="280512576379747" speed="5">
+                    <frame duration="1" hotspotX="0.502463" hotspotY="0.503401" original-source="C:\Users\Pitchfork\Desktop\bg_clouds.png">
+                        <collision-poly>
+                            <point x="0.167488" y="0.231293" />
+                            <point x="0.497537" y="0.0340136" />
+                            <point x="0.827586" y="0.238095" />
+                            <point x="0.926108" y="0.496599" />
+                            <point x="0.935961" y="0.911565" />
+                            <point x="0.497537" y="0.911565" />
+                            <point x="0.0837438" y="0.884354" />
+                            <point x="0.0640394" y="0.496599" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_cloud7" sid="573970236800891">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="427134289729765" speed="5">
+                    <frame duration="1" hotspotX="0.502463" hotspotY="0.503401" original-source="C:\Users\Pitchfork\Desktop\bg_clouds.png">
+                        <collision-poly>
+                            <point x="0.167488" y="0.231293" />
+                            <point x="0.497537" y="0.0340136" />
+                            <point x="0.827586" y="0.238095" />
+                            <point x="0.926108" y="0.496599" />
+                            <point x="0.935961" y="0.911565" />
+                            <point x="0.497537" y="0.911565" />
+                            <point x="0.083744" y="0.884354" />
+                            <point x="0.064039" y="0.496599" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="bg_cloud8" sid="929426648769819">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="336497291039356" speed="5">
+                    <frame duration="1" hotspotX="0.502463" hotspotY="0.503401" original-source="C:\Users\Pitchfork\Desktop\bg_clouds.png">
+                        <collision-poly>
+                            <point x="0.167488" y="0.231293" />
+                            <point x="0.497537" y="0.0340136" />
+                            <point x="0.827586" y="0.238095" />
+                            <point x="0.926108" y="0.496599" />
+                            <point x="0.935961" y="0.911565" />
+                            <point x="0.497537" y="0.911565" />
+                            <point x="0.0837438" y="0.884354" />
+                            <point x="0.0640394" y="0.496599" />
                         </collision-poly>
                     </frame>
                 </animation>

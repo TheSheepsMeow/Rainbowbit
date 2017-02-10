@@ -888,5 +888,61 @@
                 </event-group>
             </sub-events>
         </event-block>
+        <event-group description="" sid="842733873417063" title="island dripping">
+            <sub-events>
+                <event-block sid="848592232308520">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="379929824005738" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Move to bottom" sid="222602856794772" type="islandDripping" />
+                        <action id="0" name="Set spraying" sid="539460295523191" type="islandDripping">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="137540890540451">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="717793937819140" type="player">
+                            <param id="0" name="Instance variable">level</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">6</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set spraying" sid="884951228374785" type="islandDripping">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="973600120163689">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="375922838083460" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Set position" sid="111823650196234" type="islandDripping">
+                            <param id="0" name="X">Island2.X</param>
+                            <param id="1" name="Y">Island2.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="672987603347241">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="637254969457186">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="948394025737364">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="409214083812160">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-group>
     </events>
 </c2eventsheet>
