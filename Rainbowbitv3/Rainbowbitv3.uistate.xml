@@ -10,8 +10,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="0">Game</layout>
-        <event-sheet active="1" order="1">EventGame</event-sheet>
+        <layout order="4">Game</layout>
+        <layout order="0">Loader</layout>
+        <layout order="2">Title</layout>
+        <event-sheet active="1" order="5">EventGame</event-sheet>
+        <event-sheet order="3">EventTitle</event-sheet>
+        <event-sheet order="1">loader</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -32,15 +36,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/player/" />
         <folder expanded="1" path="animation-folder/collect/" />
-        <folder expanded="1" path="animation-folder/circleGuide/" />
         <folder expanded="1" path="animation-folder/nope/" />
         <folder expanded="1" path="animation-folder/avoid/" />
         <folder expanded="1" path="animation-folder/bg/" />
-        <folder expanded="1" path="animation-folder/Island/" />
         <folder expanded="1" path="animation-folder/bg_wave/" />
         <folder expanded="1" path="animation-folder/fg_wave0/" />
         <folder expanded="1" path="animation-folder/fg_wave1/" />
-        <folder expanded="1" path="animation-folder/rainbow/" />
         <folder expanded="1" path="animation-folder/LostFade/" />
         <folder expanded="1" path="animation-folder/camera/" />
         <folder expanded="1" path="animation-folder/DynamCamBottom/" />
@@ -56,13 +57,21 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/volcano/" />
         <folder expanded="1" path="animation-folder/rainbowshine/" />
         <folder expanded="1" path="animation-folder/Whale/" />
-        <folder expanded="1" path="animation-folder/bg_cloud/" />
         <folder expanded="1" path="animation-folder/bg_cloud2/" />
         <folder expanded="1" path="animation-folder/bg_cloud3/" />
         <folder expanded="1" path="animation-folder/bg_cloud4/" />
         <folder expanded="1" path="animation-folder/bg_cloud5/" />
         <folder expanded="1" path="animation-folder/bg_cloud6/" />
         <folder expanded="1" path="animation-folder/bg_cloud7/" />
-        <folder expanded="1" path="animation-folder/bg_cloud8/" />
+        <folder expanded="1" path="animation-folder/title/" />
+        <folder expanded="1" path="animation-folder/playButton/" />
+        <folder expanded="1" path="animation-folder/tsmLogo/" />
+        <folder expanded="1" path="animation-folder/adSpace/" />
+        <folder expanded="1" path="animation-folder/tap/" />
+        <folder expanded="1" path="animation-folder/muteButton/" />
+        <folder expanded="1" path="animation-folder/againButton/" />
+        <folder expanded="1" path="animation-folder/titleButton/" />
+        <folder expanded="1" path="animation-folder/fg_wave2/" />
+        <folder expanded="1" path="animation-folder/pause/" />
     </folders-expanded>
 </c2uistate>
