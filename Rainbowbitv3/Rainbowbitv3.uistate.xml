@@ -10,12 +10,9 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout order="4">Game</layout>
-        <layout order="0">Loader</layout>
+        <layout order="0">Game</layout>
         <layout order="2">Title</layout>
-        <event-sheet active="1" order="5">EventGame</event-sheet>
-        <event-sheet order="3">EventTitle</event-sheet>
-        <event-sheet order="1">loader</event-sheet>
+        <event-sheet active="1" order="1">EventGame</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -24,7 +21,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <property expanded="1" name="Configuration Settings" />
     </properties>
     <families-expanded root="1">
-        <family expanded="0" name="Levels" />
+        <family expanded="1" name="Levels" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
@@ -73,5 +70,7 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/titleButton/" />
         <folder expanded="1" path="animation-folder/fg_wave2/" />
         <folder expanded="1" path="animation-folder/pause/" />
+        <folder expanded="1" path="animation-folder/collectDroplet/" />
+        <folder expanded="1" path="animation-folder/collectDropletWave/" />
     </folders-expanded>
 </c2uistate>

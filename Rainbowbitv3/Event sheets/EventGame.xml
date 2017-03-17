@@ -27,11 +27,11 @@
                     <param id="3" name="Volume">0</param>
                     <param id="1" name="Tag (optional)">&quot;MainMusic&quot;</param>
                 </action>
-                <action id="-3" name="Set position" sid="911999150135854" type="EndgameFade">
+                <action disabled="1" id="-3" name="Set position" sid="911999150135854" type="EndgameFade">
                     <param id="0" name="X">camera.X</param>
                     <param id="1" name="Y">camera.Y - 80</param>
                 </action>
-                <action behavior="Pin" id="0" name="Pin to object" sid="361225308986523" type="EndgameFade">
+                <action behavior="Pin" disabled="1" id="0" name="Pin to object" sid="361225308986523" type="EndgameFade">
                     <param id="0" name="Pin to">camera</param>
                     <param id="1" name="Mode">1</param>
                 </action>
@@ -217,7 +217,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-16" name="Set opacity" sid="159382590132687" type="Levels">
-                                            <param id="0" name="Opacity">20* player.dropsCollected</param>
+                                            <param id="0" name="Opacity">lerp(Levels.Opacity, 20* player.dropsCollected, 0.05)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -245,7 +245,7 @@
                                     </conditions>
                                     <actions>
                                         <action id="-16" name="Set opacity" sid="183333465928552" type="Levels">
-                                            <param id="0" name="Opacity">100</param>
+                                            <param id="0" name="Opacity">lerp(Levels.Opacity, 100, 0.05)</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -259,6 +259,9 @@
                                         <event-block sid="9425839484989618">
                                             <conditions>
                                                 <condition id="1" name="On any touch end" sid="448071203445467" type="Touch" />
+                                                <condition id="2" inverted="1" name="Is playing" sid="947516240100894" type="player">
+                                                    <param id="0" name="Animation">&quot;Sad&quot;</param>
+                                                </condition>
                                             </conditions>
                                             <actions>
                                                 <action id="-11" name="Add to" sid="590943094579606" type="player">
@@ -267,7 +270,7 @@
                                                 </action>
                                             </actions>
                                         </event-block>
-                                        <event-block sid="5994853324727289">
+                                        <event-block disabled="1" sid="5994853324727289">
                                             <conditions>
                                                 <condition id="1" name="On any click" sid="5235863934430137" type="Mouse" />
                                             </conditions>
@@ -387,6 +390,7 @@
                                         </action>
                                     </actions>
                                 </event-block>
+                                <comment>Spawning</comment>
                                 <event-block sid="1749212377721995">
                                     <conditions>
                                         <condition id="-6" name="Every X seconds" sid="477029081454524" type="System">
@@ -396,9 +400,12 @@
                                     <actions>
                                         <action id="-3" name="Create object" sid="8745453847765549" type="System">
                                             <param id="0" name="Object to create">collect</param>
-                                            <param id="1" name="Layer">1</param>
+                                            <param id="1" name="Layer">&quot;bg&quot;</param>
                                             <param id="2" name="X">choose((player.imagepointX(1)+160),(player.imagepointX(1)-160))</param>
                                             <param id="3" name="Y">0</param>
+                                        </action>
+                                        <action behavior="Bullet" id="2" name="Set gravity" sid="927080889105076" type="collect">
+                                            <param id="0" name="Gravity">random(0,100)</param>
                                         </action>
                                         <action id="9" name="Set scale" sid="409604156802872" type="collect">
                                             <param id="0" name="Scale">random(0.5, 1.0)</param>
@@ -449,7 +456,14 @@
                                         <action id="-9" name="Destroy" sid="993384489696952" type="avoid" />
                                     </actions>
                                 </event-block>
-                                <event-block sid="768472266707128">
+                                <comment></comment>
+                                <event-block sid="457899279954990">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-24" name="Move to top" sid="264189219834158" type="avoid" />
+                                    </actions>
+                                </event-block>
+                                <event-block disabled="1" sid="768472266707128">
                                     <conditions>
                                         <condition id="0" name="On collision with another object" sid="376236302479454" type="collect">
                                             <param id="0" name="Object">avoid</param>
@@ -490,70 +504,139 @@
                         </event-group>
                         <event-group description="" sid="693647233079082" title="over">
                             <sub-events>
-                                <event-block any="1" sid="877617818812501">
+                                <event-block any="1" sid="398048405446589">
                                     <conditions>
-                                        <condition id="0" name="On collision with another object" sid="133628142657239" type="player">
+                                        <condition id="0" name="On collision with another object" sid="536450119562116" type="player">
                                             <param id="0" name="Object">nope</param>
                                         </condition>
-                                        <condition id="0" name="On collision with another object" sid="819960792203325" type="player">
+                                        <condition id="0" name="On collision with another object" sid="245626484571807" type="player">
                                             <param id="0" name="Object">avoid</param>
                                         </condition>
-                                        <condition id="0" name="On collision with another object" sid="192866583907392" type="player">
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="111248129985391" type="Function">
+                                            <param id="0" name="Name">&quot;over&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block any="1" sid="832079851661763">
+                                    <conditions>
+                                        <condition id="0" name="On collision with another object" sid="789892252033898" type="player">
                                             <param id="0" name="Object">fg_wave0</param>
                                         </condition>
-                                        <condition id="0" name="On collision with another object" sid="654573338545328" type="player">
+                                        <condition id="0" name="On collision with another object" sid="775397754905529" type="player">
                                             <param id="0" name="Object">fg_wave1</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="4" name="Set animation" sid="501021829257920" type="player">
+                                        <action id="0" name="Call function" sid="833939924606591" type="Function">
+                                            <param id="0" name="Name">&quot;over&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="304196639888971">
+                                    <conditions>
+                                        <condition id="0" name="On function" sid="306090146339631" type="Function">
+                                            <param id="0" name="Name">&quot;over&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="105572402423672" type="player">
                                             <param id="0" name="Animation">&quot;Sad&quot;</param>
                                             <param id="1" name="From">1</param>
                                         </action>
-                                        <action id="0" name="Play" sid="674130761139156" type="Audio">
+                                        <action id="-34" name="Set layer background color" sid="380607359422414" type="System">
+                                            <param id="0" name="Layer">0</param>
+                                            <param id="1" name="Color">rgb(0, 0, 0)</param>
+                                        </action>
+                                        <action id="0" name="Play" sid="601246131206427" type="Audio">
                                             <param id="0" name="Audio file">Explosion 1</param>
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">0</param>
                                             <param id="1" name="Tag (optional)">&quot;lose&quot;</param>
                                         </action>
-                                        <action id="-9" name="Set value" sid="626495523830605" type="System">
+                                        <action id="-9" name="Set value" sid="981051029890381" type="System">
                                             <param id="0" name="Variable">speed</param>
                                             <param id="1" name="Value">0.5</param>
                                         </action>
-                                        <action behavior="Bullet" id="0" name="Set speed" sid="702054061202756" type="collect">
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="537617508859140" type="collect">
                                             <param id="0" name="Speed">50</param>
                                         </action>
-                                        <action behavior="Bullet" id="0" name="Set speed" sid="263391454327751" type="avoid">
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="370758535242931" type="avoid">
                                             <param id="0" name="Speed">50</param>
                                         </action>
-                                        <action id="-12" name="Set group active" sid="477306396088460" type="System">
+                                        <action id="-12" name="Set group active" sid="100748719416732" type="System">
                                             <param id="0" name="Group name">&quot;collection&quot;</param>
                                             <param id="1" name="State">0</param>
                                         </action>
-                                        <action id="-12" name="Set group active" sid="568648332740058" type="System">
+                                        <action id="-12" name="Set group active" sid="286928117320584" type="System">
                                             <param id="0" name="Group name">&quot;rotation&quot;</param>
                                             <param id="1" name="State">0</param>
                                         </action>
-                                        <action id="-16" name="Wait" sid="567701425992250" type="System">
+                                        <action behavior="Fade" id="1" name="Start fade" sid="467529732214007" type="player" />
+                                        <action id="-16" name="Wait" sid="606495890904470" type="System">
                                             <param id="0" name="Seconds">0.5</param>
                                         </action>
-                                        <action id="-16" name="Set opacity" sid="703868274046541" type="LostFade">
+                                        <action id="-16" name="Set opacity" sid="558598889302788" type="LostFade">
                                             <param id="0" name="Opacity">100</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="834779880626801" type="pause">
+                                        <action id="-15" name="Set visible" sid="136213373490693" type="pause">
                                             <param id="0" name="Visibility">0</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="840767162541908" type="againButton">
+                                        <action id="-15" name="Set visible" sid="666456067424760" type="againButton">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="879917536087845" type="againButtonText">
+                                        <action id="-15" name="Set visible" sid="239454027131591" type="againButtonText">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="610291982606291" type="titleButton">
+                                        <action id="-15" name="Set visible" sid="966772594451446" type="titleButton">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
-                                        <action id="-9" name="Destroy" sid="779286567218259" type="player" />
+                                        <action id="-16" name="Wait" sid="334872283315849" type="System">
+                                            <param id="0" name="Seconds">0.5</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="343286224038873" type="player" />
                                     </actions>
+                                </event-block>
+                                <event-block sid="134479725132204">
+                                    <conditions>
+                                        <condition id="-11" name="Is within angle" sid="488866463323740" type="player">
+                                            <param id="0" name="Within">1</param>
+                                            <param id="1" name="Angle">90</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" sid="838965813146256" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="493996241147881" type="System">
+                                            <param id="0" name="Object to create">collectDropletWave</param>
+                                            <param id="1" name="Layer">&quot;bg&quot;</param>
+                                            <param id="2" name="X">random(280,290)</param>
+                                            <param id="3" name="Y">player.y + random(-10,10)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="353937992062935">
+                                    <conditions>
+                                        <condition id="-11" name="Is within angle" sid="317245271550190" type="player">
+                                            <param id="0" name="Within">1</param>
+                                            <param id="1" name="Angle">270</param>
+                                        </condition>
+                                        <condition id="-4" name="Trigger once while true" sid="408574270501372" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Create object" sid="460934302098062" type="System">
+                                            <param id="0" name="Object to create">collectDropletWave</param>
+                                            <param id="1" name="Layer">&quot;bg&quot;</param>
+                                            <param id="2" name="X">random(30,40)</param>
+                                            <param id="3" name="Y">player.y + random(-10,10)</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="536009355783441">
+                                    <conditions />
+                                    <actions />
                                 </event-block>
                             </sub-events>
                         </event-group>
@@ -887,6 +970,9 @@
                                                         <condition id="-4" name="Trigger once while true" sid="793264096157241" type="System" />
                                                     </conditions>
                                                     <actions>
+                                                        <action id="-15" name="Set visible" sid="405584900732568" type="pause">
+                                                            <param id="0" name="Visibility">0</param>
+                                                        </action>
                                                         <action id="-9" name="Set value" sid="193612131856201" type="System">
                                                             <param id="0" name="Variable">speed</param>
                                                             <param id="1" name="Value">0</param>
@@ -897,7 +983,7 @@
                                                         <action id="-16" name="Set opacity" sid="807967468861868" type="rainbowshine">
                                                             <param id="0" name="Opacity">0</param>
                                                         </action>
-                                                        <action behavior="Fade" id="1" name="Start fade" sid="742442939362619" type="player" />
+                                                        <action behavior="Fade" disabled="1" id="1" name="Start fade" sid="742442939362619" type="player" />
                                                         <action behavior="Timer" id="0" name="Start timer" sid="489375666431428" type="camera">
                                                             <param id="0" name="Duration">3</param>
                                                             <param id="1" name="Type">0</param>
@@ -918,6 +1004,30 @@
                                                         <action id="4" name="Set animation" sid="241445323573368" type="volcano">
                                                             <param id="0" name="Animation">&quot;Explosion&quot;</param>
                                                             <param id="1" name="From">1</param>
+                                                        </action>
+                                                        <action behavior="Rotate" id="0" name="Set speed" sid="789430902360894" type="player">
+                                                            <param id="0" name="Speed">720</param>
+                                                        </action>
+                                                        <action behavior="Rotate" id="1" name="Set acceleration" sid="773976820070072" type="player">
+                                                            <param id="0" name="Acceleration">-180</param>
+                                                        </action>
+                                                        <action behavior="Pin" id="0" name="Pin to object" sid="206120849640301" type="player">
+                                                            <param id="0" name="Pin to">Island2</param>
+                                                            <param id="1" name="Mode">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="943592276836034">
+                                                    <conditions>
+                                                        <condition id="-5" name="Compare width" sid="586123295232659" type="player">
+                                                            <param id="0" name="Comparison">4</param>
+                                                            <param id="1" name="Width">30</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-7" name="Set size" sid="492206415668140" type="player">
+                                                            <param id="0" name="Width">player.Width * 0.999</param>
+                                                            <param id="1" name="Height">player.Height * 0.999</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -1004,14 +1114,17 @@
                                                         <condition behavior="Fade" id="1" name="On fade-in finished" sid="528968516497265" type="EndgameFade" />
                                                     </conditions>
                                                     <actions>
+                                                        <action behavior="Fade" id="1" name="Start fade" sid="225627931823402" type="endgameText" />
                                                         <action id="-16" name="Wait" sid="524290729034041" type="System">
-                                                            <param id="0" name="Seconds">1.0</param>
+                                                            <param id="0" name="Seconds">5</param>
                                                         </action>
                                                         <action id="-17" name="Set layer scale" sid="889479067139658" type="System">
                                                             <param id="0" name="Layer">&quot;bg&quot;</param>
                                                             <param id="1" name="Scale">1.0</param>
                                                         </action>
-                                                        <action id="-26" name="Restart layout" sid="410079308824129" type="System" />
+                                                        <action id="-2" name="Go to layout" sid="570436343427901" type="System">
+                                                            <param id="0" name="Layout">Title</param>
+                                                        </action>
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
@@ -1108,6 +1221,50 @@
                             <param id="1" name="Tag">&quot;NewWindow&quot;</param>
                         </action>
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="188188630310871" title="Droplets">
+            <sub-events>
+                <event-block sid="481992344863204">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="519184550198713">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="103758081906262" type="collectDroplet" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="735876175226093" type="collectDroplet" />
+                    </actions>
+                </event-block>
+                <event-block sid="940594970303350">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="679437997751336" type="collect">
+                            <param id="0" name="Object">bg_wave</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="295779920601341" type="System">
+                            <param id="0" name="Object to create">collectDroplet</param>
+                            <param id="1" name="Layer">&quot;bgwave&quot;</param>
+                            <param id="2" name="X">collect.X</param>
+                            <param id="3" name="Y">collect.Y - 30</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="788535472927283" type="System">
+                            <param id="0" name="Object to create">collectDropletWave</param>
+                            <param id="1" name="Layer">&quot;bgwave&quot;</param>
+                            <param id="2" name="X">collect.X</param>
+                            <param id="3" name="Y">collect.Y - 30</param>
+                        </action>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="413273295880046" type="collectDroplet">
+                            <param id="0" name="Angle">270</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="128637667366337">
+                    <conditions />
+                    <actions />
                 </event-block>
             </sub-events>
         </event-group>
