@@ -196,6 +196,9 @@
                                     <param id="0" name="X">player.ImagePointX(1)</param>
                                     <param id="1" name="Y">player.ImagePointY(1)</param>
                                 </action>
+                                <action id="-18" name="Rotate clockwise" sid="765368624697448" type="avoid">
+                                    <param id="0" name="Degrees">1</param>
+                                </action>
                             </actions>
                         </event-block>
                         <comment>Changing opacity of each rainbow stripe</comment>
@@ -584,6 +587,9 @@
                                         </action>
                                         <action id="-15" name="Set visible" sid="136213373490693" type="pause">
                                             <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="102623089273508" type="ohno">
+                                            <param id="0" name="Visibility">1</param>
                                         </action>
                                         <action id="-15" name="Set visible" sid="666456067424760" type="againButton">
                                             <param id="0" name="Visibility">1</param>
@@ -977,8 +983,12 @@
                                                             <param id="0" name="Variable">speed</param>
                                                             <param id="1" name="Value">0</param>
                                                         </action>
+                                                        <action id="4" name="Set animation" sid="191764146238355" type="volcano">
+                                                            <param id="0" name="Animation">&quot;Anticipation&quot;</param>
+                                                            <param id="1" name="From">1</param>
+                                                        </action>
                                                         <action id="-16" name="Wait" sid="907515056047677" type="System">
-                                                            <param id="0" name="Seconds">2.0</param>
+                                                            <param id="0" name="Seconds">3</param>
                                                         </action>
                                                         <action id="-16" name="Set opacity" sid="807967468861868" type="rainbowshine">
                                                             <param id="0" name="Opacity">0</param>
@@ -1114,7 +1124,7 @@
                                                         <condition behavior="Fade" id="1" name="On fade-in finished" sid="528968516497265" type="EndgameFade" />
                                                     </conditions>
                                                     <actions>
-                                                        <action behavior="Fade" id="1" name="Start fade" sid="225627931823402" type="endgameText" />
+                                                        <action behavior="Fade" id="1" name="Start fade" sid="225627931823402" type="wow" />
                                                         <action id="-16" name="Wait" sid="524290729034041" type="System">
                                                             <param id="0" name="Seconds">5</param>
                                                         </action>

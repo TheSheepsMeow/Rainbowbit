@@ -25,9 +25,7 @@
         </event-block>
         <event-block sid="565279162396313">
             <conditions>
-                <condition id="17" name="On tap object" sid="728538258173727" type="Touch">
-                    <param id="0" name="Object">playButton</param>
-                </condition>
+                <condition id="14" name="On tap" sid="728538258173727" type="Touch" />
             </conditions>
             <actions>
                 <action id="0" name="Play" sid="576177184604598" type="Audio">
@@ -49,7 +47,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="252889888218666">
+        <event-block disabled="1" sid="252889888218666">
             <conditions>
                 <condition id="4" name="Is touching object" sid="735960053896017" type="Touch">
                     <param id="0" name="Object">playButton</param>
@@ -62,7 +60,7 @@
                 </action>
             </actions>
         </event-block>
-        <event-block sid="362635886783731">
+        <event-block disabled="1" sid="362635886783731">
             <conditions>
                 <condition id="4" inverted="1" name="Is touching object" sid="599688064676682" type="Touch">
                     <param id="0" name="Object">playButton</param>

@@ -351,28 +351,43 @@
                         <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Vertical</movement>
+                                <wave>Sine</wave>
+                                <period>10</period>
+                                <period-random>0</period-random>
+                                <period-offset>0</period-offset>
+                                <period-offset-random>0</period-offset-random>
+                                <magnitude>5</magnitude>
+                                <magnitude-random>5</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>161</x>
-                        <y>163</y>
+                        <y>131</y>
                         <z>0</z>
-                        <width>257</width>
-                        <height>176</height>
+                        <width>316</width>
+                        <height>199</height>
                         <depth>0</depth>
-                        <hotspotX>0.501945496</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.50316453</hotspotX>
+                        <hotspotY>0.502512574</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
                 <instance type="3WD" uid="43">
                     <properties>
-                        <character-width>16</character-width>
-                        <character-height>16</character-height>
+                        <character-width>23</character-width>
+                        <character-height>42</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
                         <text>Collect the Rainbow!</text>
-                        <scale>1</scale>
+                        <scale>0.55</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
@@ -384,8 +399,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>165.172271729</x>
-                        <y>266.362060547</y>
+                        <x>165</x>
+                        <y>249</y>
                         <z>0</z>
                         <width>320.106048584</width>
                         <height>30</height>
@@ -394,6 +409,50 @@
                         <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="bg_cloud2" uid="69">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>265.289978027</x>
+                        <y>0.288108826</y>
+                        <z>0</z>
+                        <width>89.949996948</width>
+                        <height>65.136199951</height>
+                        <depth>0</depth>
+                        <hotspotX>0.497536957</hotspotX>
+                        <hotspotY>0.503401339</hotspotY>
+                        <angle>0.222434625</angle>
+                        <opacity>0.5</opacity>
+                    </world>
+                </instance>
+                <instance type="bg_cloud3" uid="70">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>69</x>
+                        <y>61</y>
+                        <z>0</z>
+                        <width>70.263114929</width>
+                        <height>50.880184174</height>
+                        <depth>0</depth>
+                        <hotspotX>0.502463043</hotspotX>
+                        <hotspotY>0.503401339</hotspotY>
+                        <angle>-0.414264739</angle>
+                        <opacity>0.5</opacity>
                     </world>
                 </instance>
             </instances>
@@ -508,8 +567,8 @@
                         <width>48</width>
                         <height>48</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.507936537</hotspotX>
+                        <hotspotY>0.507936537</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -524,7 +583,7 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>161</x>
+                        <x>-169</x>
                         <y>335</y>
                         <z>0</z>
                         <width>196</width>
@@ -549,22 +608,22 @@
                         <x>161</x>
                         <y>455</y>
                         <z>0</z>
-                        <width>321</width>
-                        <height>51</height>
+                        <width>320</width>
+                        <height>50</height>
                         <depth>0</depth>
-                        <hotspotX>0.501557648</hotspotX>
-                        <hotspotY>0.509803951</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
                 </instance>
                 <instance type="moreGames" uid="54">
                     <properties>
-                        <character-width>16</character-width>
-                        <character-height>16</character-height>
+                        <character-width>23</character-width>
+                        <character-height>43</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
                         <text>MORE GAMES</text>
-                        <scale>1</scale>
+                        <scale>0.65</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
                         <vertical-alignment>Center</vertical-alignment>
@@ -576,11 +635,33 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>166</x>
-                        <y>454</y>
+                        <x>169</x>
+                        <y>454.5</y>
                         <z>0</z>
-                        <width>170</width>
-                        <height>30</height>
+                        <width>210</width>
+                        <height>47</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="tap" uid="64">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>162</x>
+                        <y>358</y>
+                        <z>0</z>
+                        <width>120</width>
+                        <height>100</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>

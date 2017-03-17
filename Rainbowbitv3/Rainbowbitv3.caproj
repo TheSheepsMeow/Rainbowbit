@@ -302,12 +302,12 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="741809586679353" speed="5">
-                    <frame duration="1" hotspotX="0.511111" hotspotY="0.483871" original-source="C:\Users\Pitchfork\Desktop\raindropWrong.png">
+                    <frame duration="1" hotspotX="0.509804" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\rock.png">
                         <collision-poly>
-                            <point x="0.2" y="0.709677" />
-                            <point x="0.2" y="0.290323" />
-                            <point x="0.866667" y="0.193548" />
-                            <point x="0.866667" y="0.806452" />
+                            <point x="0" y="1" />
+                            <point x="0" y="0" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -682,6 +682,10 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="877064905227473" speed="5">
                     <frame duration="1" hotspotX="0.503067" hotspotY="0.503268" original-source="C:\Users\david\Downloads\SheepsMeowInternship\Rainbowbit\Sprites\volcano_dormant.png" />
                 </animation>
+                <animation framecount="2" loop="1" name="Anticipation" pingpong="0" repeatcount="1" repeatto="0" sid="568790829420170" speed="5">
+                    <frame duration="1" hotspotX="0.503067" hotspotY="0.503268" original-source="C:\Users\Pitchfork\Desktop\cano3.png" />
+                    <frame duration="1" hotspotX="0.503067" hotspotY="0.503268" original-source="C:\Users\Pitchfork\Desktop\cano3.png" />
+                </animation>
                 <animation framecount="2" loop="1" name="Explosion" pingpong="0" repeatcount="1" repeatto="0" sid="119406740286042" speed="3">
                     <frame duration="1" hotspotX="0.503067" hotspotY="0.503268" original-source="C:\Users\david\Downloads\SheepsMeowInternship\Rainbowbit\Sprites\volcano_erupt0.png">
                         <collision-poly>
@@ -903,9 +907,14 @@
         </object-type>
         <object-type name="title" sid="154279659720169">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="338575522240314">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="633994830462909" speed="5">
-                    <frame duration="1" hotspotX="0.501945" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\stylizedTitle.png">
+                    <frame duration="1" hotspotX="0.503165" hotspotY="0.502513" original-source="C:\Users\Pitchfork\Desktop\title.png">
                         <collision-poly>
                             <point x="0.00389105" y="0.00568182" />
                             <point x="1" y="0" />
@@ -941,7 +950,18 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="585668219872880" speed="0">
-                    <frame duration="1" hotspotX="0.501558" hotspotY="0.509804" original-source="C:\Users\Pitchfork\Desktop\adspace.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\moregame.png">
+                        <collision-poly>
+                            <point x="0.01875" y="0.12" />
+                            <point x="0.5" y="0.04" />
+                            <point x="0.984375" y="0.1" />
+                            <point x="0.996875" y="0.5" />
+                            <point x="0.984375" y="0.9" />
+                            <point x="0.5" y="0.98" />
+                            <point x="0.015625" y="0.9" />
+                            <point x="0.00625" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -956,7 +976,7 @@
         <object-type name="tap" sid="518200953907349">
             <plugin id="Sprite" />
             <animation-folder>
-                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="3" repeatto="0" sid="211525405491122" speed="3">
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="3" repeatto="0" sid="211525405491122" speed="3">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\tap0.png" />
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\tap1.png" />
                 </animation>
@@ -969,10 +989,10 @@
             </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="unmuted" pingpong="0" repeatcount="1" repeatto="0" sid="891833429340153" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\mute.png" />
+                    <frame duration="1" hotspotX="0.507937" hotspotY="0.507937" original-source="C:\Users\Pitchfork\Desktop\mute.png" />
                 </animation>
                 <animation framecount="1" loop="0" name="muted" pingpong="0" repeatcount="1" repeatto="0" sid="569410809775979" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\mute1.png" />
+                    <frame duration="1" hotspotX="0.507937" hotspotY="0.507937" original-source="C:\Users\Pitchfork\Desktop\mute1.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -980,12 +1000,34 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="192401488588142" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\replay.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\replay1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\again.png">
+                        <collision-poly>
+                            <point x="0.0204082" y="0.0555556" />
+                            <point x="0.5" y="0" />
+                            <point x="0.979592" y="0.0555556" />
+                            <point x="1" y="0.5" />
+                            <point x="0.979592" y="0.944444" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0204082" y="0.944444" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\again1.png">
+                        <collision-poly>
+                            <point x="0.0204082" y="0.0555556" />
+                            <point x="0.5" y="0" />
+                            <point x="0.979592" y="0.0555556" />
+                            <point x="1" y="0.5" />
+                            <point x="0.979592" y="0.944444" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0204082" y="0.944444" />
+                            <point x="0" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
                 <animation framecount="2" loop="1" name="Pressed" pingpong="0" repeatcount="1" repeatto="0" sid="287462283645396" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\replayPressed.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\replaypressed1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\again2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\again3.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -1001,14 +1043,14 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\home1.png" />
                 </animation>
                 <animation framecount="2" loop="1" name="Pressed" pingpong="0" repeatcount="1" repeatto="0" sid="484931651539320" speed="3">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\titlePressed.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\titlepressed1.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\again3.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\again4.png" />
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="3WD" sid="283128920368893">
             <plugin id="Spritefont2" />
-            <texture />
+            <texture original-source="C:\Users\Pitchfork\Desktop\Sprite Fonts\SpriteFont_NovaMono_Regular_(36)_[0,0,0,0]_23x42.png" />
         </object-type>
         <object-type name="fg_wave2" sid="638019332596590">
             <plugin id="Sprite" />
@@ -1040,8 +1082,8 @@
             </instance-variables>
             <animation-folder>
                 <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="157766674133995" speed="0">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\pause.png" />
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\pause1.png" />
+                    <frame duration="1" hotspotX="0.507692" hotspotY="0.507692" original-source="C:\Users\Pitchfork\Desktop\pause.png" />
+                    <frame duration="1" hotspotX="0.507692" hotspotY="0.507692" original-source="C:\Users\Pitchfork\Desktop\pause1.png" />
                 </animation>
             </animation-folder>
         </object-type>
@@ -1050,7 +1092,7 @@
         </object-type>
         <object-type name="moreGames" sid="194886578490567">
             <plugin id="Spritefont2" />
-            <texture />
+            <texture original-source="C:\Users\Pitchfork\Desktop\Sprite Fonts\SpriteFont_NovaMono_Bold_(36)_[0,0,0,0]_23x43.png" />
         </object-type>
         <object-type name="collectDroplet" sid="832027698695363">
             <plugin id="Sprite" />
@@ -1157,6 +1199,49 @@
                 </behavior-type>
             </behaviors>
             <texture />
+        </object-type>
+        <object-type name="ohno" sid="774306058103220">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="782353320161952" speed="5">
+                    <frame duration="1" hotspotX="0.511905" hotspotY="0.380952" original-source="C:\Users\Pitchfork\Desktop\ohno.png">
+                        <collision-poly>
+                            <point x="0.148809" y="0.326531" />
+                            <point x="0.511905" y="0.0204082" />
+                            <point x="0.839286" y="0.380952" />
+                            <point x="0.869048" y="0.428571" />
+                            <point x="0.511905" y="0.92517" />
+                            <point x="0.113095" y="0.476191" />
+                            <point x="0.125" y="0.380952" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.511905" hotspotY="0.380952" original-source="C:\Users\Pitchfork\Desktop\ohno1.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="wow" sid="882410380595624">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Fade" sid="607652814569825">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="253425301775858" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\wow.png">
+                        <collision-poly>
+                            <point x="0.314685" y="0.5" />
+                            <point x="0.5" y="0.233333" />
+                            <point x="0.674825" y="0.516667" />
+                            <point x="0.674825" y="0.5" />
+                            <point x="0.716783" y="0.55" />
+                            <point x="0.5" y="0.966667" />
+                            <point x="0.269231" y="0.572222" />
+                            <point x="0.314685" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>
