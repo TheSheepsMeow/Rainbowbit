@@ -20,7 +20,7 @@
                     <param id="0" name="Layer">0</param>
                     <param id="1" name="Color">rgb(255, 255, 255)</param>
                 </action>
-                <action id="-21" name="Reset global variables" sid="660273662695595" type="System" />
+                <action disabled="1" id="-21" name="Reset global variables" sid="660273662695595" type="System" />
                 <action id="0" name="Play" sid="872467115140047" type="Audio">
                     <param id="0" name="Audio file">RainbowbitMusicdraft1</param>
                     <param id="2" name="Loop">1</param>
@@ -45,6 +45,18 @@
                 <action id="-12" name="Set group active" sid="735527172348772" type="System">
                     <param id="0" name="Group name">&quot;rotation&quot;</param>
                     <param id="1" name="State">1</param>
+                </action>
+                <action id="-9" name="Set value" sid="535215332298558" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-9" name="Set value" sid="528376391640825" type="System">
+                    <param id="0" name="Variable">speed</param>
+                    <param id="1" name="Value">1.25</param>
+                </action>
+                <action id="-9" name="Set value" sid="174386972199541" type="System">
+                    <param id="0" name="Variable">start</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>

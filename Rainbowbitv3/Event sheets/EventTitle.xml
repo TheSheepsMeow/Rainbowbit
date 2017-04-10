@@ -26,6 +26,9 @@
         <event-block sid="565279162396313">
             <conditions>
                 <condition id="14" name="On tap" sid="728538258173727" type="Touch" />
+                <condition id="4" inverted="1" name="Is touching object" sid="478331697711128" type="Touch">
+                    <param id="0" name="Object">muteButton</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="0" name="Play" sid="576177184604598" type="Audio">
@@ -154,7 +157,7 @@
             </conditions>
             <actions>
                 <action id="8" name="Open URL in new window" sid="561635379639703" type="Browser">
-                    <param id="0" name="URL">&quot;http://thesheepsmeow.com&quot;</param>
+                    <param id="0" name="URL">&quot;http://thesheepsmeow.com/html5&quot;</param>
                     <param id="1" name="Tag">&quot;NewWindow&quot;</param>
                 </action>
             </actions>
