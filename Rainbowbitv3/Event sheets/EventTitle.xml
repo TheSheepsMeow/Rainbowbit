@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>EventTitle</name>
+    <events>
+        <event-block sid="344603475930673">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="548152996771121" type="System" />
+                <condition id="5" inverted="1" name="Is tag playing" sid="830148294677942" type="Audio">
+                    <param id="0" name="Tag">&quot;music&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="524679494244067" type="Audio">
+                    <param id="0" name="Audio file">RainbowbitMusicdraft1</param>
+                    <param id="2" name="Loop">1</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                </action>
+                <action disabled="1" id="-13" name="Set boolean" sid="350381243763061" type="muteButton">
+                    <param id="0" name="Instance variable">isPlaying</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="565279162396313">
+            <conditions>
+                <condition id="14" name="On tap" sid="728538258173727" type="Touch" />
+                <condition id="4" inverted="1" name="Is touching object" sid="478331697711128" type="Touch">
+                    <param id="0" name="Object">muteButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="0" name="Play" sid="576177184604598" type="Audio">
+                    <param id="0" name="Audio file">Pickup-coin 7</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+                <action id="4" name="Set animation" sid="871130359129516" type="playButton">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="-16" name="Wait" sid="588066983864011" type="System">
+                    <param id="0" name="Seconds">0.1</param>
+                </action>
+                <action id="33" name="Stop all" sid="778169346648086" type="Audio" />
+                <action id="-2" name="Go to layout" sid="856851552132659" type="System">
+                    <param id="0" name="Layout">Game</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="252889888218666">
+            <conditions>
+                <condition id="4" name="Is touching object" sid="735960053896017" type="Touch">
+                    <param id="0" name="Object">playButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="463450691202046" type="playButton">
+                    <param id="0" name="Animation">&quot;Pressed&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block disabled="1" sid="362635886783731">
+            <conditions>
+                <condition id="4" inverted="1" name="Is touching object" sid="599688064676682" type="Touch">
+                    <param id="0" name="Object">playButton</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="322148591398366" type="playButton">
+                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <variable constant="0" name="isMuted" sid="209326336710579" static="0" type="number">0</variable>
+        <event-group description="" sid="951689698105309" title="Mute">
+            <sub-events>
+                <event-block sid="272746133380605">
+                    <conditions>
+                        <condition id="17" name="On tap object" sid="614977619530484" type="Touch">
+                            <param id="0" name="Object">muteButton</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Add to" sid="371436436476429" type="System">
+                            <param id="0" name="Variable">isMuted</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="527522812984076" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="157404221247554">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="716263959936989" type="System">
+                            <param id="0" name="Variable">isMuted</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="593692732906102" type="System">
+                            <param id="0" name="Variable">isMuted</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="567128614581863">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="174826063798745" type="System">
+                            <param id="0" name="Variable">isMuted</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="862986891461489" type="muteButton">
+                            <param id="0" name="Animation">&quot;muted&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="8" name="Set silent" sid="950121590173475" type="Audio">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="495018164074799">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="634678641765091" type="System">
+                            <param id="0" name="Variable">isMuted</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="810935149405840" type="muteButton">
+                            <param id="0" name="Animation">&quot;unmuted&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="8" name="Set silent" sid="463054745617893" type="Audio">
+                            <param id="0" name="Mode">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <comment>adSpace</comment>
+        <event-block sid="970828256772560">
+            <conditions>
+                <condition id="17" name="On tap object" sid="113711803003966" type="Touch">
+                    <param id="0" name="Object">adSpace</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="8" name="Open URL in new window" sid="561635379639703" type="Browser">
+                    <param id="0" name="URL">&quot;http://thesheepsmeow.com/html5&quot;</param>
+                    <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
