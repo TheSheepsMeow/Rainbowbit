@@ -3,12 +3,19 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>loader</name>
     <events>
-        <event-block sid="473473185493068">
+        <event-block sid="106712299479148">
             <conditions>
-                <condition id="-25" name="On loader layout complete" sid="746000309564713" type="System" />
+                <condition id="-8" name="Compare two values" sid="616913200275833" type="System">
+                    <param id="0" name="First value">loadingprogress</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Second value">0.99</param>
+                </condition>
             </conditions>
             <actions>
-                <action id="-2" name="Go to layout" sid="428925870537686" type="System">
+                <action id="-16" name="Wait" sid="238121988892623" type="System">
+                    <param id="0" name="Seconds">1.0</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="108469707268404" type="System">
                     <param id="0" name="Layout">Title</param>
                 </action>
             </actions>
@@ -18,8 +25,8 @@
                 <condition id="-1" name="Every tick" sid="305223478524252" type="System" />
             </conditions>
             <actions>
-                <action id="-6" name="Set height" sid="855046889306165" type="TiledBackground2">
-                    <param id="0" name="Height">WindowHeight*loadingprogress</param>
+                <action id="-5" name="Set width" sid="404505911001055" type="loaderProgress">
+                    <param id="0" name="Width">lerp(loaderProgress.Width, 250 * loadingprogress, 0.05)</param>
                 </action>
             </actions>
         </event-block>

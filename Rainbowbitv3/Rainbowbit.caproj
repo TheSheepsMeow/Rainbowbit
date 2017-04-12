@@ -14,6 +14,7 @@
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="NinePatch" version="1">9-patch</plugin>
         <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Spritefont2" version="1">Sprite font</plugin>
@@ -1240,6 +1241,26 @@
                             <point x="0.314685" y="0.5" />
                         </collision-poly>
                     </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="loaderProgress" sid="498253502318169">
+            <plugin id="NinePatch" />
+            <texture original-source="C:\Users\Pitchfork\Desktop\nine.png" />
+        </object-type>
+        <object-type name="tiledsheeps" sid="861987297640898">
+            <plugin id="TiledBg" />
+            <texture original-source="C:\Users\Pitchfork\Desktop\tilinesheeps.png" />
+        </object-type>
+        <object-type name="textLoading" sid="911529098691236">
+            <plugin id="Spritefont2" />
+            <texture original-source="C:\Users\Pitchfork\Documents\GitHub\template\template\Textures\textScore.png" />
+        </object-type>
+        <object-type name="thesheepsmeow" sid="204013213743594">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="820465862159289" speed="5">
+                    <frame duration="1" hotspotX="0.502857" hotspotY="0.502857" original-source="C:\Users\brian\Downloads\thesheepsmeow.png" />
                 </animation>
             </animation-folder>
         </object-type>
