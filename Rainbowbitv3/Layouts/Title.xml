@@ -386,7 +386,7 @@
                         <character-width>23</character-width>
                         <character-height>42</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>Collect the Rainbow!</text>
+                        <text>collect the rainbow!</text>
                         <scale>0.55</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
