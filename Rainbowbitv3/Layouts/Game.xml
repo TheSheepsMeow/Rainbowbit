@@ -712,7 +712,7 @@
             <instances>
                 <instance type="cloudTrail" uid="3">
                     <properties>
-                        <rate>15</rate>
+                        <rate>5</rate>
                         <spray-cone>30</spray-cone>
                         <type>Continuous spray</type>
                         <initial-particle-properties></initial-particle-properties>
@@ -754,7 +754,7 @@
                 </instance>
                 <instance type="Particles" uid="5">
                     <properties>
-                        <rate>50</rate>
+                        <rate>20</rate>
                         <spray-cone>360</spray-cone>
                         <type>One-shot</type>
                         <initial-particle-properties></initial-particle-properties>

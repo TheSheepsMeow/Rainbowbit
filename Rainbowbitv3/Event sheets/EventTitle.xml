@@ -34,7 +34,7 @@
                 <action id="0" name="Play" sid="576177184604598" type="Audio">
                     <param id="0" name="Audio file">Pickup-coin 7</param>
                     <param id="2" name="Loop">0</param>
-                    <param id="3" name="Volume">0</param>
+                    <param id="3" name="Volume">-5</param>
                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                 </action>
                 <action id="4" name="Set animation" sid="871130359129516" type="playButton">

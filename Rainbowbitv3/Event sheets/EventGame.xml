@@ -350,7 +350,7 @@
                                         <action id="0" name="Play" sid="209259503274925" type="Audio">
                                             <param id="0" name="Audio file">Pickup-coin 7</param>
                                             <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">0</param>
+                                            <param id="3" name="Volume">-5</param>
                                             <param id="1" name="Tag (optional)">&quot;coin&quot;</param>
                                         </action>
                                         <action id="-9" name="Destroy" sid="7553498132570015" type="collect" />
@@ -569,7 +569,7 @@
                                         <action id="0" name="Play" sid="601246131206427" type="Audio">
                                             <param id="0" name="Audio file">Explosion 1</param>
                                             <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">0</param>
+                                            <param id="3" name="Volume">-20</param>
                                             <param id="1" name="Tag (optional)">&quot;lose&quot;</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="981051029890381" type="System">
@@ -670,7 +670,7 @@
                                 <action id="0" name="Play" sid="435288847145811" type="Audio">
                                     <param id="0" name="Audio file">Pickup-coin 7</param>
                                     <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
+                                    <param id="3" name="Volume">-5</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="-13" name="Set time scale" sid="548080067311792" type="System">
@@ -704,7 +704,7 @@
                                 <action id="0" name="Play" sid="420788037120542" type="Audio">
                                     <param id="0" name="Audio file">Pickup-coin 7</param>
                                     <param id="2" name="Loop">0</param>
-                                    <param id="3" name="Volume">0</param>
+                                    <param id="3" name="Volume">-5</param>
                                     <param id="1" name="Tag (optional)">&quot;&quot;</param>
                                 </action>
                                 <action id="-13" name="Set time scale" sid="740055562381425" type="System">
