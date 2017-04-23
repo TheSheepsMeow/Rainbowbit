@@ -2,13 +2,13 @@
 <c2project>
     <name>Rainbowbit</name>
     <description></description>
-    <version>0.1</version>
+    <version>0.2</version>
     <author>The Sheep&apos;s Meow</author>
-    <author-email>community@thesheepsmeow.com</author-email>
-    <author-website>http://thesheepsmeow.com</author-website>
+    <author-email>games@thesheepsmeow.com</author-email>
+    <author-website>http://www.thesheepsmeow.com/html5</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>24caak3xp96o9</unique-id>
-    <saved-with-version>23900</saved-with-version>
+    <saved-with-version>24400</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
