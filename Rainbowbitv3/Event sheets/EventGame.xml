@@ -1239,7 +1239,7 @@
                     </conditions>
                     <actions>
                         <action id="7" name="Go to URL" sid="267053999468691" type="Browser">
-                            <param id="0" name="URL">&quot;http://thesheepsmeow.com&quot;</param>
+                            <param id="0" name="URL">&quot;http://thesheepsmeow.com/html5&quot;</param>
                             <param id="1" name="Target">2</param>
                         </action>
                     </actions>
