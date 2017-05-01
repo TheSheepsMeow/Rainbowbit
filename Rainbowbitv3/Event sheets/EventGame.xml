@@ -85,9 +85,23 @@
                 <condition id="17" name="On tap object" sid="792670126677921" type="Touch">
                     <param id="0" name="Object">pause</param>
                 </condition>
+                <condition id="-9" inverted="1" name="Is visible" sid="816989349665830" type="pauseBG" />
             </conditions>
             <actions>
                 <action id="-14" name="Toggle boolean" sid="831103900814206" type="pause">
+                    <param id="0" name="Instance variable">paused</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="389976748609960">
+            <conditions>
+                <condition id="17" name="On tap object" sid="286330708186571" type="Touch">
+                    <param id="0" name="Object">pauseBG</param>
+                </condition>
+                <condition id="-9" name="Is visible" sid="682014135172688" type="pauseBG" />
+            </conditions>
+            <actions>
+                <action id="-14" name="Toggle boolean" sid="804130003047416" type="pause">
                     <param id="0" name="Instance variable">paused</param>
                 </action>
             </actions>
@@ -112,6 +126,9 @@
                 </action>
                 <action id="5" name="Set frame" sid="912211916770837" type="pause">
                     <param id="0" name="Frame number">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="600075143837499" type="pauseBG">
+                    <param id="0" name="Visibility">1</param>
                 </action>
             </actions>
         </event-block>
@@ -138,6 +155,9 @@
                 </action>
                 <action id="6" name="Set speed" sid="116751017844732" type="pause">
                     <param id="0" name="Speed">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="375311935776874" type="pauseBG">
+                    <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
         </event-block>
@@ -273,24 +293,17 @@
                                     <sub-events>
                                         <event-block sid="9425839484989618">
                                             <conditions>
-                                                <condition id="1" name="On any touch end" sid="448071203445467" type="Touch" />
+                                                <condition id="0" name="On any touch start" sid="448071203445467" type="Touch" />
                                                 <condition id="2" inverted="1" name="Is playing" sid="947516240100894" type="player">
                                                     <param id="0" name="Animation">&quot;Sad&quot;</param>
                                                 </condition>
+                                                <condition id="4" inverted="1" name="Is touching object" sid="407228433892421" type="Touch">
+                                                    <param id="0" name="Object">pause</param>
+                                                </condition>
+                                                <condition id="-9" inverted="1" name="Is visible" sid="414801293930661" type="pauseBG" />
                                             </conditions>
                                             <actions>
                                                 <action id="-11" name="Add to" sid="590943094579606" type="player">
-                                                    <param id="0" name="Instance variable">rotationDir</param>
-                                                    <param id="1" name="Value">1</param>
-                                                </action>
-                                            </actions>
-                                        </event-block>
-                                        <event-block disabled="1" sid="5994853324727289">
-                                            <conditions>
-                                                <condition id="1" name="On any click" sid="5235863934430137" type="Mouse" />
-                                            </conditions>
-                                            <actions>
-                                                <action id="-11" name="Add to" sid="5704011646559433" type="player">
                                                     <param id="0" name="Instance variable">rotationDir</param>
                                                     <param id="1" name="Value">1</param>
                                                 </action>

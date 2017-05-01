@@ -156,9 +156,9 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="8" name="Open URL in new window" sid="561635379639703" type="Browser">
+                <action id="7" name="Go to URL" sid="561635379639703" type="Browser">
                     <param id="0" name="URL">&quot;http://thesheepsmeow.com/html5&quot;</param>
-                    <param id="1" name="Tag">&quot;NewWindow&quot;</param>
+                    <param id="1" name="Target">2</param>
                 </action>
             </actions>
         </event-block>
