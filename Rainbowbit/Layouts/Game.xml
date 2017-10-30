@@ -759,17 +759,17 @@
                         <type>One-shot</type>
                         <initial-particle-properties></initial-particle-properties>
                         <speed>100</speed>
-                        <size>16</size>
+                        <size>8</size>
                         <opacity>100</opacity>
                         <grow-rate>0</grow-rate>
                         <x-randomiser>0</x-randomiser>
                         <y-randomiser>0</y-randomiser>
                         <speed-randomiser->0</speed-randomiser->
-                        <size-randomiser>0</size-randomiser>
+                        <size-randomiser>8</size-randomiser>
                         <grow-rate-randomiser>0</grow-rate-randomiser>
                         <particle-lifetime-properties></particle-lifetime-properties>
                         <acceleration>-150</acceleration>
-                        <gravity>0</gravity>
+                        <gravity>300</gravity>
                         <angle-randomiser>0</angle-randomiser>
                         <speed-randomiser>800</speed-randomiser>
                         <opacity-randomiser>0</opacity-randomiser>
@@ -1247,6 +1247,60 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
+                <instance type="textTapToChange" uid="78">
+                    <properties>
+                        <character-width>23</character-width>
+                        <character-height>42</character-height>
+                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
+                        <text>tap to change direction</text>
+                        <scale>0.55</scale>
+                        <initial-visibility>Visible</initial-visibility>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <character-spacing>0</character-spacing>
+                        <line-height>0</line-height>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Fade">
+                            <properties>
+                                <active-at-start>Yes</active-at-start>
+                                <fade-in-time>0</fade-in-time>
+                                <wait-time>0</wait-time>
+                                <fade-out-time>4</fade-out-time>
+                                <destroy>After fade out</destroy>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Sine">
+                            <properties>
+                                <active-on-start>Yes</active-on-start>
+                                <movement>Vertical</movement>
+                                <wave>Sine</wave>
+                                <period>4</period>
+                                <period-random>0</period-random>
+                                <period-offset>2</period-offset>
+                                <period-offset-random>0</period-offset-random>
+                                <magnitude>25</magnitude>
+                                <magnitude-random>0</magnitude-random>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>160</x>
+                        <y>515.261413574</y>
+                        <z>0</z>
+                        <width>320.106048584</width>
+                        <height>30</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
             </instances>
             <effects />
         </layer>
@@ -1518,10 +1572,10 @@
                         <y>156</y>
                         <z>0</z>
                         <width>286</width>
-                        <height>180</height>
+                        <height>233</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotY>0.502145946</hotspotY>
                         <angle>0</angle>
                         <opacity>0</opacity>
                     </world>

@@ -46,6 +46,10 @@
                     <param id="0" name="Group name">&quot;rotation&quot;</param>
                     <param id="1" name="State">1</param>
                 </action>
+                <action id="-12" name="Set group active" sid="948403576771631" type="System">
+                    <param id="0" name="Group name">&quot;over&quot;</param>
+                    <param id="1" name="State">1</param>
+                </action>
                 <action id="-9" name="Set value" sid="535215332298558" type="System">
                     <param id="0" name="Variable">score</param>
                     <param id="1" name="Value">0</param>
@@ -372,16 +376,28 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Create object" sid="1945376072122576" type="System">
+                                        <action disabled="1" id="-3" name="Create object" sid="1945376072122576" type="System">
                                             <param id="0" name="Object to create">Particles</param>
                                             <param id="1" name="Layer">2</param>
                                             <param id="2" name="X">collect.X</param>
                                             <param id="3" name="Y">collect.Y</param>
                                         </action>
+                                        <action id="-3" name="Create object" sid="483523752785700" type="System">
+                                            <param id="0" name="Object to create">Particles</param>
+                                            <param id="1" name="Layer">2</param>
+                                            <param id="2" name="X">collect.X - (collect.X - player.X)/10</param>
+                                            <param id="3" name="Y">collect.Y - (collect.Y - player.Y)/10</param>
+                                        </action>
+                                        <action disabled="1" id="-3" name="Create object" sid="698397346857417" type="System">
+                                            <param id="0" name="Object to create">Particles</param>
+                                            <param id="1" name="Layer">2</param>
+                                            <param id="2" name="X">(collect.X + player.X)/2.5</param>
+                                            <param id="3" name="Y">(collect.Y + player.Y)/2.5</param>
+                                        </action>
                                         <action behavior="Bullet" id="4" name="Bounce off object" sid="495446964034883" type="collect">
                                             <param id="0" name="Object">player</param>
                                         </action>
-                                        <action id="0" name="Play" sid="209259503274925" type="Audio">
+                                        <action disabled="1" id="0" name="Play" sid="209259503274925" type="Audio">
                                             <param id="0" name="Audio file">Pickup-coin 7</param>
                                             <param id="2" name="Loop">0</param>
                                             <param id="3" name="Volume">-5</param>
@@ -414,6 +430,850 @@
                                                     <param id="1" name="From">1</param>
                                                 </action>
                                             </actions>
+                                        </event-block>
+                                        <event-block sid="290639988178291">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="772870322150676" type="player">
+                                                    <param id="0" name="Instance variable">level</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">0</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="489325948617731">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="241740420893833" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="888917304459423" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0a</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="319597888897635">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="721043601585011" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="512122565152701" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0b</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="847877195804668">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="787954191437817" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="467721986654203" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0c</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="777064120851513">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="882692269350290" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="151493075440399" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0d</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="788589497235477">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="286469424916730" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">5</param>
+                                                            <param id="2" name="Value">5</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="834481647756292" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0e</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="838855687073592">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="955611803309663" type="player">
+                                                    <param id="0" name="Instance variable">level</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">1</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="407158541456813">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="631463801718698" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="560532638811250" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0e</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="954493289428147">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="526013472822548" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="441772129474704" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0b</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="825029582871529">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="949809560701309" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="127260433878481" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0c</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="188022571214491">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="221667853379635" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="477841495544760" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0d</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="219718587674878">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="260561301440610" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="571906153142986" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0e</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="352819745714143">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="513727707126206" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">5</param>
+                                                            <param id="2" name="Value">5</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="941409875165145" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0f</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="697778874100747">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="341335092780930" type="player">
+                                                    <param id="0" name="Instance variable">level</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">2</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="738421120921104">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="673892201910996" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="433222046187573" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0f</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="517436589719780">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="860541289000644" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="133726925474698" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0c</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="971670465641785">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="579837329494990" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="369568919426210" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0d</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="685866382660753">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="563652022093725" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="807892968416356" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0e</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="151090905469814">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="620555302709598" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="803744807214004" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0f</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="540563321165572">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="798072527358956" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">5</param>
+                                                            <param id="2" name="Value">5</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="387743784407331" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0g</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="547435213297041">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="283375910292084" type="player">
+                                                    <param id="0" name="Instance variable">level</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">3</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="538784274044340">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="285289165900882" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="106021699310634" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0g</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="202849335198234">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="283457015130489" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="810074554595489" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0d</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="586160811932876">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="898914157091312" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="766517952728366" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0e</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="337917516071087">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="312998520496665" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="133143017675737" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0f</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="998614193824082">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="309535860075977" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="568269281885041" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0g</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="513528249802828">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="985548970243529" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">5</param>
+                                                            <param id="2" name="Value">5</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="973947848316682" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0h</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="266016992626690">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="586716435578593" type="player">
+                                                    <param id="0" name="Instance variable">level</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">4</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="392955800550436">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="377087063154126" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="974948157588504" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0h</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="545179300756415">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="430993380943095" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="719119312478881" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0e</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="938100410168162">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="290727031773826" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="395442386259819" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0f</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="872471889017603">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="447546901992993" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="510436640673894" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0g</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="432524729487738">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="163499369007141" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="628442943331851" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0h</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="212617396661162">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="635923446019798" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">5</param>
+                                                            <param id="2" name="Value">5</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="118283645320956" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0i</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block sid="795089099655727">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="194731943695738" type="player">
+                                                    <param id="0" name="Instance variable">level</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">5</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="766675408649180">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="318166281980373" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="201988770608564" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0i</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="658038218717309">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="702970484547901" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="768084008325109" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0f</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="421735672690203">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="691134206726439" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="589094817475771" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0g</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="233466202498022">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="170802926562372" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="151405719844595" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0h</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="607516173739391">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="405591763806806" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="772167124452744" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0i</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="189318777908364">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="668359487451167" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">5</param>
+                                                            <param id="2" name="Value">5</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="284435051643410" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0f</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="980592869241018" type="System">
+                                                            <param id="0" name="Seconds">0.1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="735089836163692" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0g</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="326660068712061" type="System">
+                                                            <param id="0" name="Seconds">0.1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="414331823277025" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0h</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="276012779688471" type="System">
+                                                            <param id="0" name="Seconds">0.1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="144308412890631" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0i</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="299979107109657" type="System">
+                                                            <param id="0" name="Seconds">0.1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="775792053718694" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0g</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="111784779534704" type="System">
+                                                            <param id="0" name="Seconds">0.1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="137142167392978" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0e</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="715670630009751" type="System">
+                                                            <param id="0" name="Seconds">0.1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="207502646559029" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0c</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="999446172195351" type="System">
+                                                            <param id="0" name="Seconds">0.1</param>
+                                                        </action>
+                                                        <action id="0" name="Play" sid="330541113580677" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0a</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block disabled="1" sid="579404259517346">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="143393700246573" type="player">
+                                                    <param id="0" name="Instance variable">level</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">6</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block sid="354779302257613">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="617994866228145" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">2</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="279990150019736" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0i</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="221447432489684">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="443498734375629" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">1</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="723021054307153" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0f</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="419288426800400">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="943449562890180" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">2</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="177702751976306" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0g</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="559485803722061">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="785563958515241" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">3</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="743496156603644" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0h</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="520794390098191">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="180481592430328" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">4</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="461959882290580" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0i</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="587342862943478">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="850978679358162" type="player">
+                                                            <param id="0" name="Instance variable">dropsCollected</param>
+                                                            <param id="1" name="Comparison">5</param>
+                                                            <param id="2" name="Value">5</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="0" name="Play" sid="904984942467721" type="Audio">
+                                                            <param id="0" name="Audio file">pianoScale0i</param>
+                                                            <param id="2" name="Loop">0</param>
+                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -1268,7 +2128,7 @@
                 <event-block sid="376649540082675">
                     <conditions>
                         <condition id="17" name="On tap object" sid="955633697965577" type="Touch">
-                            <param id="0" name="Object">adSpace</param>
+                            <param id="0" name="Object">moregamesButton</param>
                         </condition>
                     </conditions>
                     <actions>

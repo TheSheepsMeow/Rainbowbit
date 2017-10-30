@@ -2,7 +2,7 @@
 <c2project>
     <name>Rainbowbit</name>
     <description>collect the rainbow</description>
-    <version>0.4</version>
+    <version>0.6</version>
     <author>The Sheep&apos;s Meow</author>
     <author-email>games@thesheepsmeow.com</author-email>
     <author-website>http://www.thesheepsmeow.com/html5</author-website>
@@ -305,14 +305,14 @@
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="741809586679353" speed="5">
                     <frame duration="1" hotspotX="0.509804" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\rock.png">
                         <collision-poly>
-                            <point x="0.156863" y="0.125" />
-                            <point x="0.490196" y="0.015625" />
-                            <point x="0.843137" y="0.125" />
-                            <point x="1" y="0.5" />
-                            <point x="0.823529" y="0.859375" />
-                            <point x="0.490196" y="0.984375" />
-                            <point x="0.196078" y="0.84375" />
-                            <point x="0.0392157" y="0.5" />
+                            <point x="0.254902" y="0.28125" />
+                            <point x="0.490196" y="0.171875" />
+                            <point x="0.745098" y="0.28125" />
+                            <point x="0.882353" y="0.5" />
+                            <point x="0.72549" y="0.703125" />
+                            <point x="0.490196" y="0.828125" />
+                            <point x="0.294118" y="0.6875" />
+                            <point x="0.137255" y="0.5" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -951,7 +951,7 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="adSpace" sid="909546795828294">
+        <object-type name="moregamesButton" sid="909546795828294">
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="585668219872880" speed="0">
@@ -1233,7 +1233,7 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="253425301775858" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\wow.png">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502146" original-source="C:\Users\brian\Downloads\Rainbowbit_thanks.png">
                         <collision-poly>
                             <point x="0.314685" y="0.5" />
                             <point x="0.5" y="0.233333" />
@@ -1264,13 +1264,40 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="820465862159289" speed="5">
-                    <frame duration="1" hotspotX="0.502857" hotspotY="0.502857" original-source="C:\Users\brian\Downloads\thesheepsmeow.png" />
+                    <frame duration="1" hotspotX="0.502222" hotspotY="0.502222" original-source="C:\Users\brian\Desktop\The Shop&apos;s Meow\Outside label_TheSheepsMeow_whitestroke.png">
+                        <collision-poly>
+                            <point x="0.255556" y="0.255556" />
+                            <point x="0.5" y="0.36" />
+                            <point x="0.644444" y="0.355556" />
+                            <point x="0.986667" y="0.5" />
+                            <point x="0.697778" y="0.697778" />
+                            <point x="0.5" y="0.691111" />
+                            <point x="0.284444" y="0.715556" />
+                            <point x="0.0177778" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
         <object-type name="pauseBG" sid="344456670476372">
             <plugin id="TiledBg" />
             <texture />
+        </object-type>
+        <object-type name="VersionNumber" sid="194108505660762">
+            <plugin id="Spritefont2" />
+            <texture original-source="C:\Users\Pitchfork\Desktop\Sprite Fonts\SpriteFont_NovaMono_Regular_(36)_[0,0,0,0]_23x42.png" />
+        </object-type>
+        <object-type name="textTapToChange" sid="172801980565997">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Fade" sid="376725838567027">
+                    <behavior id="Fade" />
+                </behavior-type>
+                <behavior-type name="Sine" sid="892171417925497">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\Pitchfork\Desktop\Sprite Fonts\SpriteFont_NovaMono_Regular_(36)_[0,0,0,0]_23x42.png" />
         </object-type>
     </object-folder>
     <families>
@@ -1335,6 +1362,24 @@
         <file name="Explosion 1.ogg" />
         <file name="click.m4a" />
         <file name="click.ogg" />
+        <file name="pianoScale0a.m4a" />
+        <file name="pianoScale0a.ogg" />
+        <file name="pianoScale0b.m4a" />
+        <file name="pianoScale0b.ogg" />
+        <file name="pianoScale0c.m4a" />
+        <file name="pianoScale0c.ogg" />
+        <file name="pianoScale0d.m4a" />
+        <file name="pianoScale0d.ogg" />
+        <file name="pianoScale0e.m4a" />
+        <file name="pianoScale0e.ogg" />
+        <file name="pianoScale0f.m4a" />
+        <file name="pianoScale0f.ogg" />
+        <file name="pianoScale0g.m4a" />
+        <file name="pianoScale0g.ogg" />
+        <file name="pianoScale0h.m4a" />
+        <file name="pianoScale0h.ogg" />
+        <file name="pianoScale0i.m4a" />
+        <file name="pianoScale0i.ogg" />
     </sounds-folder>
     <music-folder>
         <file name="RainbowbitMusicdraft1.m4a" />

@@ -386,7 +386,7 @@
                         <character-width>23</character-width>
                         <character-height>42</character-height>
                         <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
-                        <text>collect the rainbow!</text>
+                        <text>collect rainbow drops!</text>
                         <scale>0.55</scale>
                         <initial-visibility>Visible</initial-visibility>
                         <horizontal-alignment>Center</horizontal-alignment>
@@ -595,7 +595,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="adSpace" uid="48">
+                <instance type="moregamesButton" uid="48">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -718,6 +718,55 @@
             <blend-mode>0</blend-mode>
             <effect-fallback>0</effect-fallback>
             <instances />
+            <effects />
+        </layer>
+        <layer name="Debug" sid="475224350133939">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>1</x>
+                <y>1</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="VersionNumber" uid="77">
+                    <properties>
+                        <character-width>23</character-width>
+                        <character-height>42</character-height>
+                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
+                        <text>version 0.1</text>
+                        <scale>0.25</scale>
+                        <initial-visibility>Visible</initial-visibility>
+                        <horizontal-alignment>Right</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <character-spacing>0</character-spacing>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>233.7215271</x>
+                        <y>9.168703079</y>
+                        <z>0</z>
+                        <width>167</width>
+                        <height>18.337406158</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
             <effects />
         </layer>
     </layers>
