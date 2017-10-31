@@ -206,13 +206,22 @@
                 <action id="-15" name="Set visible" sid="375311935776874" type="pauseBG">
                     <param id="0" name="Visibility">0</param>
                 </action>
-                <action id="-15" name="Set visible" sid="170094427817129" type="textScore">
-                    <param id="0" name="Visibility">0</param>
-                </action>
-                <action id="-15" name="Set visible" sid="500895076653099" type="textTime">
-                    <param id="0" name="Visibility">0</param>
-                </action>
             </actions>
+            <sub-events>
+                <event-block sid="641842239416711">
+                    <conditions>
+                        <condition id="-4" name="Trigger once while true" sid="332524751491097" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="170094427817129" type="textScore">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                        <action id="-15" name="Set visible" sid="500895076653099" type="textTime">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="732903609486630">
             <conditions />
@@ -1503,6 +1512,9 @@
                                             <param id="0" name="Visibility">1</param>
                                         </action>
                                         <action id="-15" name="Set visible" sid="579110075889764" type="textScore">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="784148587156990" type="textTime">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
                                         <action id="-16" name="Wait" sid="334872283315849" type="System">
