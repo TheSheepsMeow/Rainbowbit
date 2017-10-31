@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>EventTitle</name>
     <events>
+        <include>LocalStorage</include>
         <event-block sid="344603475930673">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="548152996771121" type="System" />
@@ -180,6 +181,14 @@
             <actions>
                 <action id="0" name="Set text" sid="987471758325193" type="VersionNumber">
                     <param id="0" name="Text">&quot;version: &quot; &amp; projectversion</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="866288920769850">
+            <conditions />
+            <actions>
+                <action id="0" name="Set text" sid="806917781500928" type="textHighScore">
+                    <param id="0" name="Text">&quot;drops collected: &quot; &amp; highScore &amp; &quot;/30&quot;</param>
                 </action>
             </actions>
         </event-block>

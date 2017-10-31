@@ -307,11 +307,11 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>168</x>
-                        <y>266</y>
+                        <x>167.973327637</x>
+                        <y>266.000549316</y>
                         <z>0</z>
-                        <width>115.946296692</width>
-                        <height>108.833030701</height>
+                        <width>116</width>
+                        <height>109</height>
                         <depth>0</depth>
                         <hotspotX>0.503067493</hotspotX>
                         <hotspotY>0.503268003</hotspotY>
@@ -370,7 +370,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>161</x>
-                        <y>131</y>
+                        <y>89</y>
                         <z>0</z>
                         <width>316</width>
                         <height>199</height>
@@ -400,7 +400,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>165</x>
-                        <y>249</y>
+                        <y>227</y>
                         <z>0</z>
                         <width>320.106048584</width>
                         <height>30</height>
@@ -759,6 +759,36 @@
                         <z>0</z>
                         <width>167</width>
                         <height>18.337406158</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="textHighScore" uid="80">
+                    <properties>
+                        <character-width>23</character-width>
+                        <character-height>42</character-height>
+                        <character-set>ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789.,;:?!-_~#&quot;&apos;&amp;()[]|`\/@°+=*$£€&lt;&gt;</character-set>
+                        <text>drops collected: 1/30</text>
+                        <scale>0.3</scale>
+                        <initial-visibility>Visible</initial-visibility>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
+                        <wrapping>Word</wrapping>
+                        <character-spacing>0</character-spacing>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>160</x>
+                        <y>249</y>
+                        <z>0</z>
+                        <width>257</width>
+                        <height>26</height>
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
