@@ -2,7 +2,7 @@
 <c2project>
     <name>Rainbowbit</name>
     <description>collect the rainbow</description>
-    <version>0.7</version>
+    <version>1.1</version>
     <author>The Sheep&apos;s Meow</author>
     <author-email>games@thesheepsmeow.com</author-email>
     <author-website>http://www.thesheepsmeow.com/html5</author-website>
@@ -1206,8 +1206,13 @@
             </behaviors>
             <texture />
         </object-type>
-        <object-type name="ohno" sid="774306058103220">
+        <object-type name="ohnowow" sid="774306058103220">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="775477700673433">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="782353320161952" speed="5">
                     <frame duration="1" hotspotX="0.511905" hotspotY="0.380952" original-source="C:\Users\Pitchfork\Desktop\ohno.png">
@@ -1223,9 +1228,22 @@
                     </frame>
                     <frame duration="1" hotspotX="0.511905" hotspotY="0.380952" original-source="C:\Users\Pitchfork\Desktop\ohno1.png" />
                 </animation>
+                <animation framecount="1" loop="1" name="Wow" pingpong="0" repeatcount="1" repeatto="0" sid="163867085782665" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\brian\OneDrive\Documents\000.png">
+                        <collision-poly>
+                            <point x="0.177071" y="0.326531" />
+                            <point x="0.599207" y="0.0204082" />
+                            <point x="0.97982" y="0.380952" />
+                            <point x="1" y="0.428571" />
+                            <point x="0.599207" y="0.92517" />
+                            <point x="0.135549" y="0.476191" />
+                            <point x="0.14939" y="0.380952" />
+                        </collision-poly>
+                    </frame>
+                </animation>
             </animation-folder>
         </object-type>
-        <object-type name="wow" sid="882410380595624">
+        <object-type name="thanksForTheMemories" sid="882410380595624">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Fade" sid="607652814569825">
@@ -1310,6 +1328,26 @@
         <object-type name="textScore" sid="200762716497122">
             <plugin id="Spritefont2" />
             <texture original-source="C:\Users\Pitchfork\Desktop\Sprite Fonts\SpriteFont_NovaMono_Regular_(36)_[0,0,0,0]_23x42.png" />
+        </object-type>
+        <object-type name="textTime" sid="164556061808625">
+            <plugin id="Spritefont2" />
+            <texture original-source="C:\Users\Pitchfork\Desktop\Sprite Fonts\SpriteFont_NovaMono_Regular_(36)_[0,0,0,0]_23x42.png" />
+        </object-type>
+        <object-type name="textResetScores" sid="581484646143439">
+            <plugin id="Spritefont2" />
+            <texture original-source="D:\MEOW\Rainbowbit\Rainbowbit\Textures\3WD.png" />
+        </object-type>
+        <object-type name="menuButtonReset" sid="315954356909369">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="911720669839719" speed="0">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\confirm3.png" />
+                </animation>
+                <animation framecount="2" loop="1" name="Pressed" pingpong="0" repeatcount="1" repeatto="0" sid="970439080982156" speed="10">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\confirm2.png" />
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\confirm3.png" />
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families>

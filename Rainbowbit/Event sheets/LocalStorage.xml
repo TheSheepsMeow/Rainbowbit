@@ -70,5 +70,81 @@
                 </action>
             </actions>
         </event-block>
+        <comment></comment>
+        <event-block sid="692030162714299">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="467971269658052" type="System" />
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="420756553848833" type="System">
+                    <param id="0" name="Seconds">0.01</param>
+                </action>
+                <action id="5" name="Check item exists" sid="984804768775798" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highScore_key_rainbowbit_time&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="110518710026305">
+            <conditions>
+                <condition id="9" name="On item exists" sid="525961183204795" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highScore_key_rainbowbit_time&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="1" name="Get item" sid="962486063992607" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highScore_key_rainbowbit_time&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="308520520477536">
+            <conditions>
+                <condition id="1" name="On item get" sid="772283014111330" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highScore_key_rainbowbit_time&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="758351794183886" type="System">
+                    <param id="0" name="Variable">fastestTime</param>
+                    <param id="1" name="Value">LocalStorage.ItemValue</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="324680583390458">
+            <conditions>
+                <condition id="10" name="On item missing" sid="580023319821301" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highScore_key_rainbowbit_time&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="409043664213142" type="System">
+                    <param id="0" name="Variable">fastestTime</param>
+                    <param id="1" name="Value">999999999</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="710044690297952">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="853535902486756" type="player">
+                    <param id="0" name="Instance variable">level</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">6</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="785721334164213" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">fastestTime</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="279064095237473" type="System">
+                    <param id="0" name="Variable">fastestTime</param>
+                    <param id="1" name="Value">timer</param>
+                </action>
+                <action id="0" name="Set item" sid="420812582493539" type="LocalStorage">
+                    <param id="0" name="Key">&quot;highScore_key_rainbowbit_time&quot;</param>
+                    <param id="1" name="Value">fastestTime</param>
+                </action>
+            </actions>
+        </event-block>
     </events>
 </c2eventsheet>

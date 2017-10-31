@@ -30,6 +30,12 @@
                 <condition id="4" inverted="1" name="Is touching object" sid="478331697711128" type="Touch">
                     <param id="0" name="Object">muteButton</param>
                 </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="257306049991202" type="Touch">
+                    <param id="0" name="Object">menuButtonReset</param>
+                </condition>
+                <condition id="4" inverted="1" name="Is touching object" sid="618117800099981" type="Touch">
+                    <param id="0" name="Object">moregamesButton</param>
+                </condition>
             </conditions>
             <actions>
                 <action id="0" name="Play" sid="576177184604598" type="Audio">
@@ -186,11 +192,147 @@
         </event-block>
         <event-block sid="866288920769850">
             <conditions />
-            <actions>
-                <action id="0" name="Set text" sid="806917781500928" type="textHighScore">
-                    <param id="0" name="Text">&quot;drops collected: &quot; &amp; highScore &amp; &quot;/30&quot;</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="192870860926167">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="721213684593231" type="System">
+                            <param id="0" name="Variable">highScore</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="806917781500928" type="textHighScore">
+                            <param id="0" name="Text">&quot;drops collected: &quot; &amp; highScore &amp; &quot;/30&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="154675284894425">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="674986831617954" type="System">
+                            <param id="0" name="Variable">highScore</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="822486604895725">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="363572968719750" type="System">
+                                    <param id="0" name="Variable">fastestTime</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">60</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="130138747219483" type="textHighScore">
+                                    <param id="0" name="Text">&quot;fastest rainbow: &quot; &amp; int(fastestTime) &amp; &quot;s&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="512510233552677">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="651480220594477" type="System">
+                                    <param id="0" name="Variable">fastestTime</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">60</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Set text" sid="846431596119442" type="textHighScore">
+                                    <param id="0" name="Text">&quot;fastest rainbow: &quot; &amp; int(fastestTime/60) &amp; &quot;m &quot; &amp; int(fastestTime%60) &amp; &quot;s&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="757584745898776">
+                    <conditions />
+                    <actions />
+                </event-block>
+                <event-block sid="974607970938909">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="876162543301388" type="Touch">
+                            <param id="0" name="Object">menuButtonReset</param>
+                        </condition>
+                        <condition id="2" inverted="1" name="Is playing" sid="329861707560076" type="menuButtonReset">
+                            <param id="0" name="Animation">&quot;Pressed&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-16" name="Wait" sid="339197133350746" type="System">
+                            <param id="0" name="Seconds">0.1</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="334627072573077" type="menuButtonReset">
+                            <param id="0" name="Animation">&quot;Pressed&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="256485484730529" type="textResetScores">
+                            <param id="0" name="Text">&quot;confirm reset?&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="822616067506921">
+                    <conditions>
+                        <condition id="2" inverted="1" name="Is playing" sid="577976184808513" type="menuButtonReset">
+                            <param id="0" name="Animation">&quot;Pressed&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="352471727693879" type="textResetScores">
+                            <param id="0" name="Text">&quot;reset score&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="184233462844407">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="721494345539890" type="Touch">
+                            <param id="0" name="Object">menuButtonReset</param>
+                        </condition>
+                        <condition id="2" name="Is playing" sid="439468148365202" type="menuButtonReset">
+                            <param id="0" name="Animation">&quot;Pressed&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="3" name="Clear storage" sid="461159887070051" type="LocalStorage" />
+                        <action id="-9" name="Set value" sid="175565437287419" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="837805024818242" type="System">
+                            <param id="0" name="Variable">highScore</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="883414810820035" type="System">
+                            <param id="0" name="Variable">fastestTime</param>
+                            <param id="1" name="Value">999999999</param>
+                        </action>
+                        <action id="-16" name="Wait" sid="379105258157170" type="System">
+                            <param id="0" name="Seconds">0.15</param>
+                        </action>
+                        <action id="4" name="Set animation" sid="639467579980670" type="menuButtonReset">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="691649042003264">
+                    <conditions>
+                        <condition id="14" name="On tap" sid="319832850317325" type="Touch" />
+                        <condition id="4" inverted="1" name="Is touching object" sid="935328656584266" type="Touch">
+                            <param id="0" name="Object">menuButtonReset</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="573607991677858" type="menuButtonReset">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
     </events>
 </c2eventsheet>

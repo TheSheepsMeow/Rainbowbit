@@ -8,6 +8,8 @@
         <variable constant="0" name="start" sid="936003034721600" static="0" type="number">0</variable>
         <variable constant="0" name="score" sid="941855883677338" static="0" type="number">0</variable>
         <variable constant="0" name="speed" sid="141031408229986" static="0" type="number">1.25</variable>
+        <variable constant="0" name="timer" sid="178800567744992" static="0" type="number">0</variable>
+        <variable constant="0" name="fastestTime" sid="181132975856888" static="0" type="number">999999999</variable>
         <comment>Resetting variables &amp; player positioning</comment>
         <event-block sid="7153767189189514">
             <conditions>
@@ -136,7 +138,46 @@
                 <action id="-15" name="Set visible" sid="600075143837499" type="pauseBG">
                     <param id="0" name="Visibility">1</param>
                 </action>
+                <action id="-15" name="Set visible" sid="137535789254233" type="textScore">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="796235681940479" type="textTime">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="0" name="Set text" sid="289206252645896" type="textScore">
+                    <param id="0" name="Text">&quot;drops collected: &quot; &amp; score &amp; &quot;/30&quot;</param>
+                </action>
             </actions>
+            <sub-events>
+                <event-block sid="149610423221391">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="832550964053638" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Value">60</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="987001599253336" type="textTime">
+                            <param id="0" name="Text">&quot;time: &quot; &amp; int(timer) &amp; &quot;s&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="554423601419696">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="688743358308339" type="System">
+                            <param id="0" name="Variable">timer</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">60</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="504971965978728" type="textTime">
+                            <param id="0" name="Text">&quot;time: &quot; &amp; int(timer/60) &amp; &quot;m &quot; &amp; int(timer%60) &amp; &quot;s&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="606228743088677">
             <conditions>
@@ -163,6 +204,12 @@
                     <param id="0" name="Speed">0</param>
                 </action>
                 <action id="-15" name="Set visible" sid="375311935776874" type="pauseBG">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="170094427817129" type="textScore">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="500895076653099" type="textTime">
                     <param id="0" name="Visibility">0</param>
                 </action>
             </actions>
@@ -236,6 +283,29 @@
                                 </action>
                                 <action id="-18" name="Rotate clockwise" sid="765368624697448" type="avoid">
                                     <param id="0" name="Degrees">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block sid="862049740963464">
+                            <conditions>
+                                <condition id="-8" name="Compare two values" sid="989073740950731" type="System">
+                                    <param id="0" name="First value">timescale</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Second value">1</param>
+                                </condition>
+                                <condition id="-6" name="Every X seconds" sid="202328609231788" type="System">
+                                    <param id="0" name="Interval (seconds)">0.1</param>
+                                </condition>
+                                <condition id="-7" name="Compare instance variable" sid="189511020637755" type="player">
+                                    <param id="0" name="Instance variable">level</param>
+                                    <param id="1" name="Comparison">2</param>
+                                    <param id="2" name="Value">6</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-10" name="Add to" sid="206768456299239" type="System">
+                                    <param id="0" name="Variable">timer</param>
+                                    <param id="1" name="Value">0.1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -459,7 +529,7 @@
                                                         <action id="0" name="Play" sid="888917304459423" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0a</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -476,7 +546,7 @@
                                                         <action id="0" name="Play" sid="512122565152701" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0b</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -493,7 +563,7 @@
                                                         <action id="0" name="Play" sid="467721986654203" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0c</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -510,7 +580,7 @@
                                                         <action id="0" name="Play" sid="151493075440399" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0d</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -527,7 +597,7 @@
                                                         <action id="0" name="Play" sid="834481647756292" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0e</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -556,7 +626,7 @@
                                                         <action id="0" name="Play" sid="560532638811250" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0e</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -573,7 +643,7 @@
                                                         <action id="0" name="Play" sid="441772129474704" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0b</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -590,7 +660,7 @@
                                                         <action id="0" name="Play" sid="127260433878481" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0c</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -607,7 +677,7 @@
                                                         <action id="0" name="Play" sid="477841495544760" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0d</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -624,7 +694,7 @@
                                                         <action id="0" name="Play" sid="571906153142986" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0e</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -641,7 +711,7 @@
                                                         <action id="0" name="Play" sid="941409875165145" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0f</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -670,7 +740,7 @@
                                                         <action id="0" name="Play" sid="433222046187573" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0f</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -687,7 +757,7 @@
                                                         <action id="0" name="Play" sid="133726925474698" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0c</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -704,7 +774,7 @@
                                                         <action id="0" name="Play" sid="369568919426210" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0d</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -721,7 +791,7 @@
                                                         <action id="0" name="Play" sid="807892968416356" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0e</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -738,7 +808,7 @@
                                                         <action id="0" name="Play" sid="803744807214004" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0f</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -755,7 +825,7 @@
                                                         <action id="0" name="Play" sid="387743784407331" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0g</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -784,7 +854,7 @@
                                                         <action id="0" name="Play" sid="106021699310634" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0g</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -801,7 +871,7 @@
                                                         <action id="0" name="Play" sid="810074554595489" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0d</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -818,7 +888,7 @@
                                                         <action id="0" name="Play" sid="766517952728366" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0e</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -835,7 +905,7 @@
                                                         <action id="0" name="Play" sid="133143017675737" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0f</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -852,7 +922,7 @@
                                                         <action id="0" name="Play" sid="568269281885041" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0g</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -869,7 +939,7 @@
                                                         <action id="0" name="Play" sid="973947848316682" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0h</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -898,7 +968,7 @@
                                                         <action id="0" name="Play" sid="974948157588504" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0h</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -915,7 +985,7 @@
                                                         <action id="0" name="Play" sid="719119312478881" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0e</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -932,7 +1002,7 @@
                                                         <action id="0" name="Play" sid="395442386259819" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0f</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -949,7 +1019,7 @@
                                                         <action id="0" name="Play" sid="510436640673894" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0g</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -966,7 +1036,7 @@
                                                         <action id="0" name="Play" sid="628442943331851" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0h</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -983,7 +1053,7 @@
                                                         <action id="0" name="Play" sid="118283645320956" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0i</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -1012,7 +1082,7 @@
                                                         <action id="0" name="Play" sid="201988770608564" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0i</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -1029,7 +1099,7 @@
                                                         <action id="0" name="Play" sid="768084008325109" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0f</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -1046,7 +1116,7 @@
                                                         <action id="0" name="Play" sid="589094817475771" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0g</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -1063,7 +1133,7 @@
                                                         <action id="0" name="Play" sid="151405719844595" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0h</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -1080,7 +1150,7 @@
                                                         <action id="0" name="Play" sid="772167124452744" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0i</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-15</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -1097,7 +1167,7 @@
                                                         <action id="0" name="Play" sid="284435051643410" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0f</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-10</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                         <action id="-16" name="Wait" sid="980592869241018" type="System">
@@ -1106,7 +1176,7 @@
                                                         <action id="0" name="Play" sid="735089836163692" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0g</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-10</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                         <action id="-16" name="Wait" sid="326660068712061" type="System">
@@ -1115,7 +1185,7 @@
                                                         <action id="0" name="Play" sid="414331823277025" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0h</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-10</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                         <action id="-16" name="Wait" sid="276012779688471" type="System">
@@ -1124,7 +1194,7 @@
                                                         <action id="0" name="Play" sid="144308412890631" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0i</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-10</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                         <action id="-16" name="Wait" sid="299979107109657" type="System">
@@ -1133,7 +1203,7 @@
                                                         <action id="0" name="Play" sid="775792053718694" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0g</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-10</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                         <action id="-16" name="Wait" sid="111784779534704" type="System">
@@ -1142,7 +1212,7 @@
                                                         <action id="0" name="Play" sid="137142167392978" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0e</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-10</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                         <action id="-16" name="Wait" sid="715670630009751" type="System">
@@ -1151,7 +1221,7 @@
                                                         <action id="0" name="Play" sid="207502646559029" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0c</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-10</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                         <action id="-16" name="Wait" sid="999446172195351" type="System">
@@ -1160,121 +1230,7 @@
                                                         <action id="0" name="Play" sid="330541113580677" type="Audio">
                                                             <param id="0" name="Audio file">pianoScale0a</param>
                                                             <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
-                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
-                                        </event-block>
-                                        <event-block disabled="1" sid="579404259517346">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="143393700246573" type="player">
-                                                    <param id="0" name="Instance variable">level</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">6</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions />
-                                            <sub-events>
-                                                <event-block sid="354779302257613">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="617994866228145" type="player">
-                                                            <param id="0" name="Instance variable">dropsCollected</param>
-                                                            <param id="1" name="Comparison">2</param>
-                                                            <param id="2" name="Value">1</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="0" name="Play" sid="279990150019736" type="Audio">
-                                                            <param id="0" name="Audio file">pianoScale0i</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
-                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="221447432489684">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="443498734375629" type="player">
-                                                            <param id="0" name="Instance variable">dropsCollected</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">1</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="0" name="Play" sid="723021054307153" type="Audio">
-                                                            <param id="0" name="Audio file">pianoScale0f</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
-                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="419288426800400">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="943449562890180" type="player">
-                                                            <param id="0" name="Instance variable">dropsCollected</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">2</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="0" name="Play" sid="177702751976306" type="Audio">
-                                                            <param id="0" name="Audio file">pianoScale0g</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
-                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="559485803722061">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="785563958515241" type="player">
-                                                            <param id="0" name="Instance variable">dropsCollected</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">3</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="0" name="Play" sid="743496156603644" type="Audio">
-                                                            <param id="0" name="Audio file">pianoScale0h</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
-                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="520794390098191">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="180481592430328" type="player">
-                                                            <param id="0" name="Instance variable">dropsCollected</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">4</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="0" name="Play" sid="461959882290580" type="Audio">
-                                                            <param id="0" name="Audio file">pianoScale0i</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
-                                                            <param id="1" name="Tag (optional)">&quot;note&quot;</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                                <event-block sid="587342862943478">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="850978679358162" type="player">
-                                                            <param id="0" name="Instance variable">dropsCollected</param>
-                                                            <param id="1" name="Comparison">5</param>
-                                                            <param id="2" name="Value">5</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="0" name="Play" sid="904984942467721" type="Audio">
-                                                            <param id="0" name="Audio file">pianoScale0i</param>
-                                                            <param id="2" name="Loop">0</param>
-                                                            <param id="3" name="Volume">-5</param>
+                                                            <param id="3" name="Volume">-10</param>
                                                             <param id="1" name="Tag (optional)">&quot;note&quot;</param>
                                                         </action>
                                                     </actions>
@@ -1348,6 +1304,12 @@
                                             <param id="0" name="Scale">random(0.5, 0.95)</param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="611269847395725">
+                                            <conditions />
+                                            <actions />
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="4235592729657004">
                                     <conditions>
@@ -1427,16 +1389,6 @@
                                         <condition id="0" name="On collision with another object" sid="245626484571807" type="player">
                                             <param id="0" name="Object">avoid</param>
                                         </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="111248129985391" type="Function">
-                                            <param id="0" name="Name">&quot;over&quot;</param>
-                                            <param id="1" name="Parameter {n}"></param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block any="1" sid="832079851661763">
-                                    <conditions>
                                         <condition id="0" name="On collision with another object" sid="789892252033898" type="player">
                                             <param id="0" name="Object">fg_wave0</param>
                                         </condition>
@@ -1445,11 +1397,46 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="0" name="Call function" sid="833939924606591" type="Function">
+                                        <action id="0" name="Call function" sid="111248129985391" type="Function">
                                             <param id="0" name="Name">&quot;over&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
                                         </action>
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="266440057326834">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="207001267226843" type="System">
+                                                    <param id="0" name="Variable">score</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">highScore</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="699866697182710" type="ohnowow">
+                                                    <param id="0" name="Animation">&quot;Wow&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                                <action behavior="Sine" id="1" name="Set period" sid="470153097472371" type="ohnowow">
+                                                    <param id="0" name="Period">0.5</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="119814464686309">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="640202695200618" type="System">
+                                                    <param id="0" name="Variable">score</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Value">highScore</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="571184960552328" type="ohnowow">
+                                                    <param id="0" name="Animation">&quot;Default&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="304196639888971">
                                     <conditions>
@@ -1472,7 +1459,7 @@
                                         <action id="0" name="Play" sid="601246131206427" type="Audio">
                                             <param id="0" name="Audio file">Explosion 1</param>
                                             <param id="2" name="Loop">0</param>
-                                            <param id="3" name="Volume">-20</param>
+                                            <param id="3" name="Volume">-30</param>
                                             <param id="1" name="Tag (optional)">&quot;lose&quot;</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="981051029890381" type="System">
@@ -1503,7 +1490,7 @@
                                         <action id="-15" name="Set visible" sid="136213373490693" type="pause">
                                             <param id="0" name="Visibility">0</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="102623089273508" type="ohno">
+                                        <action id="-15" name="Set visible" sid="102623089273508" type="ohnowow">
                                             <param id="0" name="Visibility">1</param>
                                         </action>
                                         <action id="-15" name="Set visible" sid="666456067424760" type="againButton">
@@ -2036,13 +2023,49 @@
                                                         </action>
                                                         <action behavior="Fade" id="1" name="Start fade" sid="281759406353752" type="EndgameFade" />
                                                     </actions>
+                                                    <sub-events>
+                                                        <event-block sid="968539602474254">
+                                                            <conditions>
+                                                                <condition id="-14" name="Compare variable" sid="101278327607882" type="System">
+                                                                    <param id="0" name="Variable">timer</param>
+                                                                    <param id="1" name="Comparison">2</param>
+                                                                    <param id="2" name="Value">60</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Set text" sid="486290477043158" type="textTime">
+                                                                    <param id="0" name="Text">&quot;time: &quot; &amp; int(timer) &amp; &quot;s&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                        <event-block sid="254170236922565">
+                                                            <conditions>
+                                                                <condition id="-14" name="Compare variable" sid="101275367977746" type="System">
+                                                                    <param id="0" name="Variable">timer</param>
+                                                                    <param id="1" name="Comparison">5</param>
+                                                                    <param id="2" name="Value">60</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="0" name="Set text" sid="566649010026877" type="textTime">
+                                                                    <param id="0" name="Text">&quot;time: &quot; &amp; int(timer/60) &amp; &quot;m &quot; &amp; int(timer%60) &amp; &quot;s&quot;</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                                 <event-block sid="755821676021831">
                                                     <conditions>
                                                         <condition behavior="Fade" id="1" name="On fade-in finished" sid="528968516497265" type="EndgameFade" />
                                                     </conditions>
                                                     <actions>
-                                                        <action behavior="Fade" id="1" name="Start fade" sid="225627931823402" type="wow" />
+                                                        <action id="-16" name="Wait" sid="232266697882201" type="System">
+                                                            <param id="0" name="Seconds">2</param>
+                                                        </action>
+                                                        <action behavior="Fade" id="1" name="Start fade" sid="225627931823402" type="thanksForTheMemories" />
+                                                        <action id="-15" name="Set visible" sid="245920668142097" type="textTime">
+                                                            <param id="0" name="Visibility">1</param>
+                                                        </action>
                                                         <action id="-16" name="Wait" sid="524290729034041" type="System">
                                                             <param id="0" name="Seconds">5</param>
                                                         </action>
