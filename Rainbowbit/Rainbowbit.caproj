@@ -2,13 +2,13 @@
 <c2project>
     <name>Rainbowbit</name>
     <description>collect the rainbow</description>
-    <version>1.2</version>
+    <version>1.3</version>
     <author>The Sheep&apos;s Meow</author>
     <author-email>games@thesheepsmeow.com</author-email>
     <author-website>http://www.thesheepsmeow.com/html5</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>24caak3xp96o9</unique-id>
-    <saved-with-version>24400</saved-with-version>
+    <saved-with-version>25500</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
@@ -1348,6 +1348,15 @@
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="C:\Users\Pitchfork\Desktop\confirm3.png" />
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="textNewHighScore" sid="337968313554221">
+            <plugin id="Spritefont2" />
+            <behaviors>
+                <behavior-type name="Sine" sid="413724827357229">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <texture original-source="C:\Users\Pitchfork\Desktop\Sprite Fonts\SpriteFont_NovaMono_Regular_(36)_[0,0,0,0]_23x42.png" />
         </object-type>
     </object-folder>
     <families>

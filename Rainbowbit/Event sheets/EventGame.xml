@@ -66,6 +66,10 @@
                     <param id="0" name="Variable">start</param>
                     <param id="1" name="Value">0</param>
                 </action>
+                <action id="-9" name="Set value" sid="483801585001971" type="System">
+                    <param id="0" name="Variable">timer</param>
+                    <param id="1" name="Value">0</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="761310359140217">
@@ -1428,6 +1432,12 @@
                                                 <action behavior="Sine" id="1" name="Set period" sid="470153097472371" type="ohnowow">
                                                     <param id="0" name="Period">0.5</param>
                                                 </action>
+                                                <action id="-16" name="Wait" sid="825742474569364" type="System">
+                                                    <param id="0" name="Seconds">0.8</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="630274843152740" type="textNewHighScore">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
                                             </actions>
                                         </event-block>
                                         <event-block sid="119814464686309">
@@ -1442,6 +1452,9 @@
                                                 <action id="4" name="Set animation" sid="571184960552328" type="ohnowow">
                                                     <param id="0" name="Animation">&quot;Default&quot;</param>
                                                     <param id="1" name="From">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="707963813346789" type="textNewHighScore">
+                                                    <param id="0" name="Visibility">0</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -1490,38 +1503,75 @@
                                             <param id="1" name="State">0</param>
                                         </action>
                                         <action behavior="Fade" id="1" name="Start fade" sid="467529732214007" type="player" />
-                                        <action id="-16" name="Wait" sid="606495890904470" type="System">
-                                            <param id="0" name="Seconds">0.5</param>
-                                        </action>
-                                        <action id="-16" name="Set opacity" sid="558598889302788" type="LostFade">
-                                            <param id="0" name="Opacity">100</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="136213373490693" type="pause">
-                                            <param id="0" name="Visibility">0</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="102623089273508" type="ohnowow">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="666456067424760" type="againButton">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="239454027131591" type="againButtonText">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="966772594451446" type="titleButton">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="579110075889764" type="textScore">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-15" name="Set visible" sid="784148587156990" type="textTime">
-                                            <param id="0" name="Visibility">1</param>
-                                        </action>
-                                        <action id="-16" name="Wait" sid="334872283315849" type="System">
-                                            <param id="0" name="Seconds">0.5</param>
-                                        </action>
-                                        <action id="-9" name="Destroy" sid="343286224038873" type="player" />
                                     </actions>
+                                    <sub-events>
+                                        <event-block sid="641087481298891">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="535938545474100" type="System">
+                                                    <param id="0" name="Variable">timer</param>
+                                                    <param id="1" name="Comparison">2</param>
+                                                    <param id="2" name="Value">60</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="674268676211134" type="textTime">
+                                                    <param id="0" name="Text">&quot;time: &quot; &amp; int(timer) &amp; &quot;s&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="335674947233835">
+                                            <conditions>
+                                                <condition id="-14" name="Compare variable" sid="468143203648786" type="System">
+                                                    <param id="0" name="Variable">timer</param>
+                                                    <param id="1" name="Comparison">5</param>
+                                                    <param id="2" name="Value">60</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Set text" sid="956957298211406" type="textTime">
+                                                    <param id="0" name="Text">&quot;time: &quot; &amp; int(timer/60) &amp; &quot;m &quot; &amp; int(timer%60) &amp; &quot;s&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                        <event-block sid="847301201883033">
+                                            <conditions>
+                                                <condition id="-4" name="Trigger once while true" sid="564534974919677" type="System" />
+                                            </conditions>
+                                            <actions>
+                                                <action id="-16" name="Wait" sid="606495890904470" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-16" name="Set opacity" sid="558598889302788" type="LostFade">
+                                                    <param id="0" name="Opacity">100</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="136213373490693" type="pause">
+                                                    <param id="0" name="Visibility">0</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="102623089273508" type="ohnowow">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="666456067424760" type="againButton">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="239454027131591" type="againButtonText">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="966772594451446" type="titleButton">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="579110075889764" type="textScore">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-15" name="Set visible" sid="784148587156990" type="textTime">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                                <action id="-16" name="Wait" sid="334872283315849" type="System">
+                                                    <param id="0" name="Seconds">0.5</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="343286224038873" type="player" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                                 <event-block sid="134479725132204">
                                     <conditions>
