@@ -176,7 +176,7 @@
             </conditions>
             <actions>
                 <action id="7" name="Go to URL" sid="436108408489938" type="Browser">
-                    <param id="0" name="URL">&quot;http://thesheepsmeow.com/html5&quot;</param>
+                    <param id="0" name="URL">&quot;http://thesheepsmeow.com/html5/games&quot;</param>
                     <param id="1" name="Target">2</param>
                 </action>
             </actions>
