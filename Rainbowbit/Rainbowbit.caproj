@@ -2,13 +2,13 @@
 <c2project>
     <name>Rainbowbit</name>
     <description>collect the rainbow</description>
-    <version>1.31</version>
+    <version>1.32</version>
     <author>The Sheep&apos;s Meow</author>
     <author-email>games@thesheepsmeow.com</author-email>
     <author-website>http://www.thesheepsmeow.com/html5</author-website>
     <app-id>com.mycompany.myapp</app-id>
     <unique-id>24caak3xp96o9</unique-id>
-    <saved-with-version>25500</saved-with-version>
+    <saved-with-version>25900</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Browser" version="1">Browser</plugin>
@@ -1281,6 +1281,11 @@
         </object-type>
         <object-type name="thesheepsmeow" sid="204013213743594">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="629255716003631">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="820465862159289" speed="5">
                     <frame duration="1" hotspotX="0.502222" hotspotY="0.502222" original-source="C:\Users\brian\Desktop\The Shop&apos;s Meow\Outside label_TheSheepsMeow_whitestroke.png">
